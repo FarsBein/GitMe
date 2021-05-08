@@ -1,7 +1,7 @@
 
 # from server
 /node_modules
-
+.env
 
 # from client
 
