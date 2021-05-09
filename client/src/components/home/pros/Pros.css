@@ -1,0 +1,13 @@
+.jumbo-pros {
+    height: 70vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    font-weight: 450;
+}
+
+.pros-text {
+    text-align: left;
+}

@@ -1,22 +1,23 @@
 import './Navbar.css';
-import {Link} from 'react-router-dom'; 
+// import {Link} from 'react-router-dom'; 
 import * as ReactBootStrap from "react-bootstrap"
-import {AiFillGithub} from 'react-icons/ai';
+// import {AiFillGithub} from 'react-icons/ai';
 
 
 function Navbar() {
   return (
-        <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className="navbar">
+        <ReactBootStrap.Navbar collapseOnSelect expand="md" variant="dark" className="navbar">
             <ReactBootStrap.Container >
-                <ReactBootStrap.Navbar.Brand href="#home" className="logo-font">GitMe</ReactBootStrap.Navbar.Brand>
+                <ReactBootStrap.Navbar.Brand href="/"><div className="logo-font">GitMe</div></ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" className="space-between">
                     <ReactBootStrap.Nav className="mr-auto">
                         <ReactBootStrap.Nav.Link href="#features">Home</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="#pricing">Doc</ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link href="#pricing">Showcase</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="#pricing">Doc</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
-                    <ReactBootStrap.Nav className='justify-content-center align-content-lg-center'>
+
+                    <ReactBootStrap.Nav>
                         <ReactBootStrap.Nav.Link href="#deets">About us</ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link eventKey={2} href="#memes">Source Code</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
