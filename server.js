@@ -36,7 +36,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 passport.serializeUser(function (user, cb) {
-    console.log(user.id)
     cb(null, user.id)
 })
 passport.deserializeUser(function (id, cb) {
@@ -75,11 +74,16 @@ app.get('/', (req,res)=> {
 
 //for testing
 app.get('/dashboard', (req,res)=> {
+    console.log(req.user)
     res.sendFile(__dirname + '/dashboard.html');
 })
 
 app.get('/login', (req,res)=> {
-    res.sendFile(__dirname + '/login.html');
+    if (req.user) {
+        res.redirect('/dashboard');
+    } else {
+        res.sendFile(__dirname + '/login.html');
+    }
 })
 
 app.get('/logout', (req, res) => {
