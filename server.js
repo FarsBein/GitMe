@@ -20,6 +20,13 @@ mongoose.connect(process.env.MONGODB_URI, {
 const GitHubStrategy = require('passport-github').Strategy;
 const passport = require('passport')
 const session = require('express-session')
+const Auth = function (req,res,next) {
+    if (req.user) {
+        next()
+    } else {
+        res.redirect('/login');
+    }
+}  
 
 app.use(session({
     secret: process.env.SECRET_SESSION_KEY,
@@ -72,8 +79,8 @@ app.get('/', (req,res)=> {
     res.status(200).send('WE ARE WORKING FROM HOME!')
 })
 
-//for testing
-app.get('/dashboard', (req,res)=> {
+//for testing <<<
+app.get('/dashboard', Auth, (req,res)=> {
     console.log(req.user)
     res.sendFile(__dirname + '/dashboard.html');
 })
@@ -86,10 +93,11 @@ app.get('/login', (req,res)=> {
     }
 })
 
-app.get('/logout', (req, res) => {
+app.get('/logout', Auth, (req, res) => {
     req.logOut();
     res.redirect('/login');
 });
+//for testing >>>
 
 // listener 
 app.listen(PORT, console.log(`Server is starting at port ${PORT}`));

@@ -1,0 +1,13 @@
+.navbar {
+    padding: 20px;
+}
+
+
+
+@media (min-width: 768px) {
+    .center {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
