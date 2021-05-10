@@ -14,12 +14,12 @@ function Navbar() {
                         <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link href="/">Showcase</ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link href="/">Doc</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="/">About us</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/aboutUs">About us</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav>
-                        <ReactBootStrap.Nav.Link eventKey={2} href="#memes">Source Code</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link eventKey={2} href="#memes">Support</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="https://github.com/FarsBein/GitMe">Source Code</ReactBootStrap.Nav.Link> {/*may add  target="_blank" but the link is lighting up after click*/}
+                        <ReactBootStrap.Nav.Link href="/">Support</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
                 </ReactBootStrap.Navbar.Collapse>
             </ReactBootStrap.Container>

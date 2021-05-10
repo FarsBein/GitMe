@@ -28,8 +28,6 @@ function Home() {
         </ReactBootStrap.Jumbotron> 
         <Pros/>
         <Steps/>
-                 
-        <Footer/>
       </div>
   );
 }

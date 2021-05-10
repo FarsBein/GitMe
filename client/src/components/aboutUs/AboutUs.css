@@ -1,0 +1,13 @@
+.jumbo-about-us {
+    height: calc(90vh - 80px);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    font-weight: 450;
+}
+
+.infomessage-image {
+    max-width: 50px;
+}
