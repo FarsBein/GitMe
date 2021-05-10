@@ -1,5 +1,5 @@
 .steps-jumbo {
-    height: 70vh;
+    height: 80vh;
     color: white;
     background-color: #1c2237;
     display: flex;
@@ -10,8 +10,13 @@
 
 p {
     max-width: 500px;
+    text-align: left;
 }
 
 h1 {
     max-width: 500px;
+}
+
+.center-text {
+    text-align: center;
 }

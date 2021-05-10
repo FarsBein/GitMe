@@ -8,13 +8,15 @@ function AboutUs() {
     <ReactBootStrap.Jumbotron fluid className='jumbo-about-us'>
         <ReactBootStrap.Container className='home-container'>
             <img src={wokeupatnight} className='computer-image mobile'/>
+            <br className=' mobile'/>
             <div className="pros-text">
                 <h1><img src={infomessage} className='infomessage-image'/> About Us</h1>
                 <p>
-                    well more like about me. I am computer science student interested in creating something useful 
-                    to show it off in my next family gathering. Initially I was planning to create a website builder 
-                    for local businesses with only social media presences but at the same time I wanted to fix the 
-                    look of my personal website. So I thought why not kill two birds with one stone kinda of thing.                
+                    Well more like about me. I am computer science student interested in creating useful things
+                    to show it off in my family gathering. Initially I was planning to create a website builder 
+                    for local businesses that only have social media presences without a website but at the 
+                    same time I wanted to fix the look of my personal website. So I thought why not kill two 
+                    birds with one stone kinda of thing.                
                 </p>
                 <p>
                 </p>
