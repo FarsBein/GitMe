@@ -1,6 +1,7 @@
 import './Steps.css';
 import * as ReactBootStrap from "react-bootstrap"
 import checklist from '../../../images/checklist.svg';
+import checkmark from '../../../images/checkmark.png';
 
 function Steps() {
     return (
@@ -11,13 +12,16 @@ function Steps() {
                 <h1>All that you need is:</h1>
                 <br/>
                 <p>
-                    1. In one click sign in using your github account
+                    <h5><img src={checkmark} className='github-image'/> Connect to your GitHub account</h5>
+                    In one click can connect your github account with this website 
                 </p>
                 <p>
-                    2. Write a short description about yourself or use one of our templates
+                    <h5><img src={checkmark} className='github-image'/> Short Description</h5>
+                    Write a short description about yourself or use one of our templates
                 </p>
                 <p>
-                    3. Done!
+                    <h5><img src={checkmark} className='github-image'/> Done!</h5>
+                    You can add more and customize your website later on if you want
                 </p>
                 <p>
                         <ReactBootStrap.Button variant="primary" className="button">Get Started</ReactBootStrap.Button>

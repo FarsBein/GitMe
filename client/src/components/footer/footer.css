@@ -1,11 +1,11 @@
 footer {
-    height: 30vh;
     color: white;
     background-color: #1c2237;
+    height: 10vh;
+    font-weight: 450;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 450;
 }
 
 .github-image {

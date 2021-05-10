@@ -27,7 +27,8 @@ function Home() {
             </ReactBootStrap.Container>
         </ReactBootStrap.Jumbotron> 
         <Pros/>
-        <Steps/>         
+        <Steps/>
+                 
         <Footer/>
       </div>
   );

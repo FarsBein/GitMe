@@ -1,7 +1,6 @@
 import './Navbar.css';
 // import {Link} from 'react-router-dom'; 
 import * as ReactBootStrap from "react-bootstrap"
-// import {AiFillGithub} from 'react-icons/ai';
 
 
 function Navbar() {
@@ -12,14 +11,15 @@ function Navbar() {
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" className="space-between">
                     <ReactBootStrap.Nav className="mr-auto">
-                        <ReactBootStrap.Nav.Link href="#features">Home</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="#pricing">Showcase</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="#pricing">Doc</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/">Showcase</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/">Doc</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/">About us</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav>
-                        <ReactBootStrap.Nav.Link href="#deets">About us</ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link eventKey={2} href="#memes">Source Code</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link eventKey={2} href="#memes">Support</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
                 </ReactBootStrap.Navbar.Collapse>
             </ReactBootStrap.Container>
