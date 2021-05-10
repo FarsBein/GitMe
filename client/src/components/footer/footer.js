@@ -1,6 +1,7 @@
 import './Footer.css';
 import * as ReactBootStrap from "react-bootstrap"
 import github from '../../images/github.svg';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -10,13 +11,13 @@ function Footer() {
                 <br/>
                 <br/>
                 <div >
-                    <div>About Us</div>
+                    <Link to="/aboutUs" className="link">About Us</Link>
                 </div>
                 <div >
-                    <div>Contact Us</div>
+                    <Link to="/contactUs" className="link">Contact Us</Link>
                 </div>
                 <div >
-                    <div href="#"><img src={github} className='github-image'/>GitHub</div>
+                    <a href="https://github.com/FarsBein/GitMe" className="link">GitHub</a>
                 </div>
                 <br/>
                 <br/>
