@@ -13,10 +13,10 @@ function Steps() {
                 <br/>
                 <p>
                     <h5><img src={checkmark} className='github-image'/> Connect to your GitHub account</h5>
-                    In one click can connect your github account with this website 
+                    In one click you can connect your github account with this website 
                 </p>
                 <p>
-                    <h5><img src={checkmark} className='github-image'/> Short Description</h5>
+                    <h5><img src={checkmark} className='github-image'/> Write Short Description</h5>
                     Write a short description about yourself or use one of our templates
                 </p>
                 <p>

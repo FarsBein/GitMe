@@ -19,7 +19,7 @@ function Navbar() {
 
                     <ReactBootStrap.Nav>
                         <ReactBootStrap.Nav.Link href="https://github.com/FarsBein/GitMe">Source Code</ReactBootStrap.Nav.Link> {/*may add  target="_blank" but the link is lighting up after click*/}
-                        <ReactBootStrap.Nav.Link href="/">Support</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/contactUs">Support</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
                 </ReactBootStrap.Navbar.Collapse>
             </ReactBootStrap.Container>

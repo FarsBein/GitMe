@@ -2,10 +2,6 @@
     height: 60vh;
     color: white;
     background-color: #1c2237;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .button {
@@ -38,12 +34,14 @@
     display:none;
 }
 
+.center-text {
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .home-text {
         text-align: center;
     }
-    
-
 
     .home-container {
         display: flex;
@@ -64,4 +62,7 @@
     .desktop {
         display: none;
     }
+    .button {
+        width: 100%;
+     }
 }

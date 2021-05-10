@@ -1,12 +1,12 @@
 import './Pros.css';
 import * as ReactBootStrap from "react-bootstrap"
-import personprofileonscreen from '../../../images/personprofileonscreen.svg';
+import screen from '../../../images/screen.png';
 
 function Pros() {
   return (
     <ReactBootStrap.Jumbotron fluid className='jumbo-pros'>
         <ReactBootStrap.Container className='home-container'>
-            <img src={personprofileonscreen} className='computer-image'/>
+            <img src={screen} className='computer-image'/>
             <div className="pros-text">
                 <h1>Make and Forget</h1>
                 <p>
