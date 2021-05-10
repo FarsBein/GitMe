@@ -11,7 +11,7 @@ function Steps() {
                 <h1>All that you need is:</h1>
                 <br/>
                 <p>
-                    1. Sign in through your github account
+                    1. In one click sign in using your github account
                 </p>
                 <p>
                     2. Write a short description about yourself or use one of our templates

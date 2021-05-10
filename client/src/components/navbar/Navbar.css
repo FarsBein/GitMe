@@ -3,6 +3,8 @@
     min-height: 80px;
     font-size: 1.2rem;
     color: aliceblue;
+    text-align: left;
+    padding-left: 10px;
 }
 
 .logo-font {
@@ -15,6 +17,7 @@
     .space-between {
         display: flex;
         justify-content: space-between;
-        /* text-align: center; */
+        padding-left: 0;
     }
+
 }
