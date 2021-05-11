@@ -35,5 +35,12 @@
 
 .jumbo {
     min-height: calc(100vh - 80px - 80px);
-    background-color: white;
+}
+
+/* dashboard */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

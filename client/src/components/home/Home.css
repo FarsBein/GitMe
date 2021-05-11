@@ -7,6 +7,9 @@
 .button {
    width: 300px;
    height: 50px;
+   background-color: #fff;
+ 
+   box-shadow: 1px 1px 20px 1px #0d64e6;
 }
 
 .home-container {
