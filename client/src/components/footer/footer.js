@@ -1,4 +1,5 @@
 import './Footer.css';
+import '../SharedStyle.css';
 import * as ReactBootStrap from "react-bootstrap"
 import { Link } from 'react-router-dom';
 

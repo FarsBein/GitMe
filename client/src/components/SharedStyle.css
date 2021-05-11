@@ -1,0 +1,11 @@
+
+
+/* used in footer | Navbar */
+.link {
+    color: rgb(165, 165, 165); 
+    text-decoration: inherit;
+}
+
+.link:hover {
+    color: white;
+}

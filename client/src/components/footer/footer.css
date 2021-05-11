@@ -18,13 +18,3 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
-
-.link {
-    color: rgb(165, 165, 165); 
-    text-decoration: inherit;
-}
-
-.link :hover {
-    background-color: white; 
-    font-weight:bold;
-}

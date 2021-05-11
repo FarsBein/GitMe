@@ -15,3 +15,11 @@
 .tab-image {
     width: 50px;
 }
+
+.showcase-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+

@@ -5,7 +5,7 @@ import tab from '../../images/tab.png'
 function Showcase() {
   return (
     <ReactBootStrap.Jumbotron fluid className='jumbo-about-us'>
-        <ReactBootStrap.Container className='home-container'>
+        <ReactBootStrap.Container className='showcase-container'>
             <div className="pros-text">
                 <h1><img src={tab} className='tab-image'/>Showcase</h1>
                 <p>
@@ -15,7 +15,7 @@ function Showcase() {
                 <p>
                 </p>
             </div>
-            <ReactBootStrap.Card style={{ maxWidth: '18rem' }}>
+            <ReactBootStrap.Card className='card' style={{ maxWidth: '18rem' }}>
                 <ReactBootStrap.Card.Img variant="top" src="https://res.cloudinary.com/farsbein01/image/upload/v1620680953/localhost_3000__Max_t4oega.png" />
                 <ReactBootStrap.Card.Body>
                     <ReactBootStrap.Card.Title>Card Title</ReactBootStrap.Card.Title>
