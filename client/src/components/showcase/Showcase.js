@@ -9,8 +9,8 @@ function Showcase() {
             <div className="pros-text">
                 <h1><img src={tab} className='tab-image'/>Showcase</h1>
                 <p>
-                    Get inspired by our community personal website examples made with GitMe. 
-                    Discover capabilities, create your website, and join the showcase. #GitMeToShowcase               
+                    Get inspired by our community personal website examples made with GITME. 
+                    Discover capabilities, create your website, and join the showcase. #GITMEToShowcase               
                 </p>
                 <p>
                 </p>

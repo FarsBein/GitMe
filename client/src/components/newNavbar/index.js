@@ -16,7 +16,7 @@ const Navbar = () => {
       <Nav>
         <NavLinkLogo to='/'>
           {/* <img src={require('../../images/')} alt='logo' /> */}
-          <h1>GitMe</h1>
+          <h1>GITME</h1>
         </NavLinkLogo>
         <Bars />
         <NavMenu>
@@ -37,7 +37,7 @@ const Navbar = () => {
             <NavLink to='/contactUs' activeStyle>
                 Support
             </NavLink>
-            <NavLinkA href="https://github.com/FarsBein/GitMe" target='blank_' activeStyle>
+            <NavLinkA href="https://github.com/FarsBein/GITME" target='blank_' activeStyle>
                 Source Code
             </NavLinkA>
             {/* <NavBtnLink to='/signin'>Sign In</NavBtnLink> */}

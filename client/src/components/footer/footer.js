@@ -17,7 +17,7 @@ function Footer() {
                     <Link to="/contactUs" className="link">Contact Us</Link>
                 </div>
                 <div >
-                    <a href="https://github.com/FarsBein/GitMe" className="link" target='blank_'>GitHub</a>
+                    <a href="https://github.com/FarsBein/GITME" className="link" target='blank_'>GitHub</a>
                 </div>
                 <br/>
                 <br/>

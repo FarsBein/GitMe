@@ -14,7 +14,7 @@ function Home() {
                 <div className="home-text">
                     <h1>Quick. Easy. Hassle-free.</h1>
                     <p>
-                        GitMe is an extremely beginner-friendly website builder that can help you 
+                        GITME is an extremely beginner-friendly website builder that can help you 
                         build your own personal website  to showcase what really matters, your projects!
                     </p>
                     <br/>

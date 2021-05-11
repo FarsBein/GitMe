@@ -28,7 +28,7 @@ function Navbar() {
 
                         <ReactBootStrap.Nav>
                             <NavLink to="/contactUs" className='link' onClick={() => toggleExpand()} style={{ paddingLeft: 13 }}>Support</NavLink>
-                            <a href='https://github.com/FarsBein/GitMe' onClick={() => toggleExpand()} target="_blank" className='link' style={{ paddingLeft: 13 }}>Source Code</a>  
+                            <a href='https://github.com/FarsBein/GITME' onClick={() => toggleExpand()} target="_blank" className='link' style={{ paddingLeft: 13 }}>Source Code</a>  
                         </ReactBootStrap.Nav>
                     </ReactBootStrap.Navbar.Collapse>
                 </ReactBootStrap.Container>

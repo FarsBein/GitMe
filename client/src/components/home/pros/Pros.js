@@ -10,7 +10,7 @@ function Pros() {
             <div className="pros-text">
                 <h1>Make and Forget</h1>
                 <p>
-                    GitMe will automatically update your site with any new public projects you make.
+                    GITME will automatically update your site with any new public projects you make.
                     Takes less than 5 minutes to make and you will never need to worry about it again                   
                 </p>
                 <p>
