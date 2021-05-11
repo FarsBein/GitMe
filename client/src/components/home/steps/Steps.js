@@ -24,7 +24,7 @@ function Steps() {
                     You can add more and customize your website later on if you want
                 </p>
                 <p>
-                    <ReactBootStrap.Button variant="primary" className="button">Get Started</ReactBootStrap.Button>
+                    <ReactBootStrap.Button variant="warning" className="button">Get Started</ReactBootStrap.Button>
                 </p>
             </div>
             <img src={checklist} className='computer-image desktop'/>

@@ -1,15 +1,14 @@
 .jumbo-home {
     height: 60vh;
     color: white;
-    background-color: #1c2237;
+    background-color: black;
 }
 
 .button {
    width: 300px;
    height: 50px;
    background-color: #fff;
- 
-   box-shadow: 1px 1px 20px 1px #0d64e6;
+   box-shadow: 1px 1px 20px 1px yellow;
 }
 
 .home-container {

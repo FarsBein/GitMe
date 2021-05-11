@@ -2,6 +2,7 @@ import './Navbar.css';
 import {useState} from 'react'
 import * as ReactBootStrap from "react-bootstrap"
 import { NavLink } from 'react-router-dom';
+// import lightmoon from '../../images/lightmoon.svg';
 
 function Navbar() {
     const [expanded, setExpanded] =  useState(false);
@@ -13,7 +14,12 @@ function Navbar() {
     return (
             <ReactBootStrap.Navbar collapseOnSelect expanded={expanded} expand="md" variant="dark" className="navbar">
                 <ReactBootStrap.Container >
-                    <ReactBootStrap.Navbar.Brand href="/"><div className="logo-font">GITME</div></ReactBootStrap.Navbar.Brand>
+                    <ReactBootStrap.Navbar.Brand href="/">
+                        <div className="logo-font">
+                            {/* <img src={lightmoon} className='logo'/>&nbsp; */}
+                            GITME
+                        </div>
+                    </ReactBootStrap.Navbar.Brand>
                     <ReactBootStrap.Navbar.Toggle onClick={() => toggleExpand()} aria-controls="responsive-navbar-nav" />
                     <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" className="space-between">
                         <ReactBootStrap.Nav className="mr-auto">

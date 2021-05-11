@@ -19,7 +19,7 @@ function Home() {
                     </p>
                     <br/>
                     <p>
-                        <ReactBootStrap.Button variant="primary" className="button">Get Started</ReactBootStrap.Button>
+                        <ReactBootStrap.Button variant="warning" className="button">Get Started</ReactBootStrap.Button>
                     </p>
                 </div>
                 <img src={buildwebsite2} className='computer-image desktop'/>

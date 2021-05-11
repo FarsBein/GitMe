@@ -3,7 +3,7 @@ import {NavLink as Link} from 'react-router-dom'
 import {FaBars, FaTimes} from 'react-icons/fa'
 
 export const Nav = styled.nav`
-    background: #1c2237;
+    background: black;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -41,7 +41,7 @@ export const NavLink = styled(Link)`
     &:hover {
       transition: all 0.2s ease-in-out;
       background: #fff;
-      color: #1c2237;
+      color: black;
     }
 `
 
@@ -61,7 +61,7 @@ export const NavLinkA = styled.a`
     &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #1c2237;
+    color: black;
     }
 `
 
