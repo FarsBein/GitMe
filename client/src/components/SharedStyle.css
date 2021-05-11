@@ -1,6 +1,6 @@
 
 
-/* used in footer | Navbar */
+/* used in footer and Navbar */
 .link {
     color: rgb(165, 165, 165); 
     text-decoration: inherit;
@@ -11,7 +11,7 @@
 }
 
 
-/* used in home  */
+/* used in home and about us */
 
 .mobile {
     display:none;
@@ -29,4 +29,11 @@
     .desktop {
         display: none;
     }
+}
+
+/* about us, contact us and doc */
+
+.jumbo {
+    min-height: calc(100vh - 80px - 80px);
+    background-color: white;
 }

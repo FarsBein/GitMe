@@ -18,14 +18,17 @@ function Navbar() {
                     <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" className="space-between">
                         <ReactBootStrap.Nav className="mr-auto">
                             <NavLink to="/"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Home        </NavLink>
-                            {/* <NavLink to="/showcase" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Showcase    </NavLink> */}
-                            <NavLink to="/doc"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Doc         </NavLink>
+                            {/* <NavLink to="/showcase" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Showcase</NavLink> */}
+                            <NavLink to="/doc"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Doc      </NavLink>
                             <NavLink to="/aboutUs"  onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>About us    </NavLink>
+
+                            <NavLink to="/dashboard" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Dashboard  </NavLink>
+
                         </ReactBootStrap.Nav>
 
                         <ReactBootStrap.Nav>
-                            <a href='https://github.com/FarsBein/GitMe' onClick={() => toggleExpand()} target="_blank" className='link' style={{ paddingLeft: 13 }}>Source Code</a>  
                             <NavLink to="/contactUs" className='link' onClick={() => toggleExpand()} style={{ paddingLeft: 13 }}>Support</NavLink>
+                            <a href='https://github.com/FarsBein/GitMe' onClick={() => toggleExpand()} target="_blank" className='link' style={{ paddingLeft: 13 }}>Source Code</a>  
                         </ReactBootStrap.Nav>
                     </ReactBootStrap.Navbar.Collapse>
                 </ReactBootStrap.Container>

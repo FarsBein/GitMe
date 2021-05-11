@@ -1,9 +1,10 @@
 import './ContactUs.css';
+import '../SharedStyle.css'
 import * as ReactBootStrap from "react-bootstrap"
 
 function ContactUs() {
   return (
-    <ReactBootStrap.Jumbotron fluid className='jumbo-about-us'>
+    <ReactBootStrap.Jumbotron fluid className='jumbo'>
         <ReactBootStrap.Container className='contact-container'>
             <div>
                 <h1>Contact Us</h1>

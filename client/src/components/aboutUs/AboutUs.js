@@ -6,7 +6,7 @@ import infomessage from '../../images/infomessage.png'
 
 function AboutUs() {
   return (
-    <ReactBootStrap.Jumbotron fluid className='jumbo-about-us'>
+    <ReactBootStrap.Jumbotron fluid className='jumbo jumbo-about-us'>
         <ReactBootStrap.Container className='home-container'>
             <img src={wokeupatnight} className='computer-image mobile'/>
             <br className=' mobile'/>

@@ -7,6 +7,8 @@ import Showcase from './components/showcase/Showcase';
 import Doc from './components/documentation/Doc';
 // import Navbar from './components/newNavbar';
 import Navbar from './components/navbar/Navbar';
+import Dashboard from './components/dashboard/Dashboard';
+import CreateWeb from './components/createWeb/CreateWeb';
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
       <Router>
         <Navbar/>
         <Switch>
+          <Route path='/create-website' component={CreateWeb}/>
+          <Route path='/dashboard' component={Dashboard}/>
           <Route path='/showcase' component={Showcase}/>
           <Route path='/doc' component={Doc}/>
           <Route path='/aboutUs' component={AboutUs}/>

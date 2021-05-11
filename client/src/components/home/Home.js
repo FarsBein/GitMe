@@ -8,7 +8,7 @@ import Steps from './steps/Steps';
 function Home() {
   return (
       <div>
-        <ReactBootStrap.Jumbotron fluid className='jumbo'>
+        <ReactBootStrap.Jumbotron fluid className='jumbo-home'>
             <ReactBootStrap.Container className='home-container'>
                 <img src={buildwebsite2} className='computer-image mobile'/>
                 <div className="home-text">

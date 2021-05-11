@@ -1,0 +1,10 @@
+.jumbo {
+    height: calc(90vh - 80px);
+    color: black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

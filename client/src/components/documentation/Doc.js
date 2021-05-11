@@ -1,13 +1,12 @@
 import './Doc.css';
+import '../SharedStyle.css'
 import * as ReactBootStrap from "react-bootstrap"
-import wokeupatnight from '../../images/wokeupatnight.png'
-import infomessage from '../../images/infomessage.png'
 import Sidebar from './sidebar/Sidebar';
 import Display from './display/Display';
 
 function Doc() {
   return (
-    <ReactBootStrap.Jumbotron fluid className='jumbo-about-us'>
+    <ReactBootStrap.Jumbotron fluid className='jumbo'>
         <ReactBootStrap.Container className='home-container'>
             <Sidebar/>
             <Display/>

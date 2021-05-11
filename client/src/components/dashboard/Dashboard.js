@@ -1,8 +1,9 @@
-import '../Doc.css';
+import './Dashboard.css';
+import '../SharedStyle.css';
 
-function Display() {
+function Dashboard() {
   return (
-    <div className="pros-text">
+    <div className="jumbo">
 
         <p>
             bruh it is simple just sign in and you are good               
@@ -13,4 +14,4 @@ function Display() {
   );
 }
 
-export default Display;
+export default Dashboard;
