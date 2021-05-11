@@ -29,11 +29,6 @@
     max-width: 500px;
 }
 
-
-.mobile {
-    display:none;
-}
-
 .center-text {
     text-align: center;
 }
@@ -55,13 +50,6 @@
         max-width: 400px;
     }
 
-    .mobile {
-        display: flex;
-    }
-
-    .desktop {
-        display: none;
-    }
     .button {
         width: 100%;
      }

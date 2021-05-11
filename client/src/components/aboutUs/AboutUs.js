@@ -1,4 +1,5 @@
 import './AboutUs.css';
+import '../SharedStyle.css'
 import * as ReactBootStrap from "react-bootstrap"
 import wokeupatnight from '../../images/wokeupatnight.png'
 import infomessage from '../../images/infomessage.png'

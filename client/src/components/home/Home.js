@@ -1,10 +1,9 @@
 import './Home.css';
+import '../SharedStyle.css';
 import * as ReactBootStrap from "react-bootstrap"
-import buildwebsite from '../../images/buildwebsite.svg';
 import buildwebsite2 from '../../images/buildwebsite2.svg';
 import Pros from './pros/Pros';
 import Steps from './steps/Steps';
-import Footer from '../footer/Footer';
 
 function Home() {
   return (
