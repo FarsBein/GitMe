@@ -18,7 +18,7 @@ function Navbar() {
                     <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" className="space-between">
                         <ReactBootStrap.Nav className="mr-auto">
                             <NavLink to="/"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Home        </NavLink>
-                            <NavLink to="/showcase" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Showcase    </NavLink>
+                            {/* <NavLink to="/showcase" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Showcase    </NavLink> */}
                             <NavLink to="/"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Doc         </NavLink>
                             <NavLink to="/aboutUs"  onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>About us    </NavLink>
                         </ReactBootStrap.Nav>
