@@ -1,7 +1,6 @@
 import './Navbar.css';
-// import {Link} from 'react-router-dom'; 
 import * as ReactBootStrap from "react-bootstrap"
-
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -11,15 +10,15 @@ function Navbar() {
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" className="space-between">
                     <ReactBootStrap.Nav className="mr-auto">
-                        <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="/">Showcase</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="/">Doc</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="/aboutUs">About us</ReactBootStrap.Nav.Link>
+                        <NavLink to="/" className='link' style={{ paddingLeft: 13 }}>            Home        </NavLink>
+                        <NavLink to="/showcase" className='link' style={{ paddingLeft: 13 }}>    Showcase    </NavLink>
+                        <NavLink to="/do" className='link' style={{ paddingLeft: 13 }}>          Doc         </NavLink>
+                        <NavLink to="/aboutUs" className='link' style={{ paddingLeft: 13 }}>     About us    </NavLink>
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav>
-                        <ReactBootStrap.Nav.Link href="https://github.com/FarsBein/GitMe">Source Code</ReactBootStrap.Nav.Link> {/*may add  target="_blank" but the link is lighting up after click*/}
-                        <ReactBootStrap.Nav.Link href="/contactUs">Support</ReactBootStrap.Nav.Link>
+                        <a href='https://github.com/FarsBein/GitMe' target="_blank" className='link' style={{ paddingLeft: 13 }}>Source Code</a>  
+                        <NavLink to="/contactUs" className='link' style={{ paddingLeft: 13 }}>Support</NavLink>
                     </ReactBootStrap.Nav>
                 </ReactBootStrap.Navbar.Collapse>
             </ReactBootStrap.Container>
@@ -28,54 +27,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// import * as ReactBootStrap from "react-bootstrap"
-// import React, {useState} from 'react'
-// import './Navbar.css';
-// import {Link} from 'react-router-dom'; 
-// import {FaBars, FaTimes, AiFillGithub} from 'react-icons/fa'
-
-// function Navbar() {
-//     const [click,setClick] = useState(false)
-
-//     const menuClickHandler = () => {
-//         setClick(!click)
-//     }
-
-//     return (
-//         <div className='navbar'>
-//             <div className="navbar-container container">
-//                 <Link to='/' className='logo'>
-//                     GITME
-//                 </Link>
-//                 <div className="menu-icon" onClick={menuClickHandler}>
-//                     {click ? <FaBars/> : <FaTimes/>}
-//                 </div>
-//                 <ul className={click ? 'nav-menu active': 'nav-menu'}>
-//                     <li className='nav-item'>
-//                         <Link to='/' className="nav-item link">
-//                             Home
-//                         </Link>
-//                     </li>
-//                     <li className='nav-item'>
-//                         <Link to='/' className="nav-item link">
-//                             Contact
-//                         </Link>
-//                     </li>
-//                     <li className='nav-item'>
-//                         <Link to='/' className="nav-item link">
-//                             About us
-//                         </Link>
-//                     </li>
-//                     <li className='nav-item'>
-//                         <Link to='/' className="nav-item link">
-//                             Source Code
-//                         </Link>
-//                     </li>
-//                 </ul>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default Navbar;
