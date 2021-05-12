@@ -21,6 +21,10 @@ h1 {
     text-align: center;
 }
 
+.checkmark-icon {
+    max-width: 30px;
+}
+
 @media (max-width: 768px) {
     .steps-jumbo {
         height: 100vh;

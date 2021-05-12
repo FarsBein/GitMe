@@ -6,7 +6,7 @@ import Display from './display/Display';
 
 function Doc() {
   return (
-    <ReactBootStrap.Jumbotron fluid className='jumbo'>
+    <ReactBootStrap.Jumbotron fluid className='jumbo center'>
         <ReactBootStrap.Container className='home-container'>
             <Sidebar/>
             <Display/>

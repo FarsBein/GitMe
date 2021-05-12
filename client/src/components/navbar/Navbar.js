@@ -28,7 +28,7 @@ function Navbar() {
                             <NavLink to="/doc"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Doc      </NavLink>
                             <NavLink to="/aboutUs"  onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>About us    </NavLink>
 
-                            <NavLink to="/dashboard" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Dashboard  </NavLink>
+                            <NavLink to="/dashboard" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13}}>Dashboard  </NavLink>
 
                         </ReactBootStrap.Nav>
 

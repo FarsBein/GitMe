@@ -8,6 +8,9 @@
 
 .link:hover {
     color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 20%;
+    text-decoration-color: yellow;
 }
 
 
@@ -35,6 +38,7 @@
 
 .jumbo {
     min-height: calc(100vh - 80px - 80px);
+    background-color: #EDF0F4;
 }
 
 /* dashboard */

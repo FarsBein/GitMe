@@ -3,7 +3,7 @@ import '../SharedStyle.css';
 
 function CreateWeb() {
   return (
-    <div className="jumbo">
+    <div className="jumbo center">
 
         <p>
             create-website             
