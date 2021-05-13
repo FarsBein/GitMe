@@ -21,10 +21,20 @@
     width: 250px;
     height: 250px;
     margin:20px;
+    box-shadow: 1px 1px 5px 1px black;
     background-color: black;
     color: white;
-    box-shadow: 1px 1px 5px 1px black;
-    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cards:hover {
+    background-color: #EDF0F4;
+    color: black;
+    box-shadow: 1px 1px 5px 1px gray;
+}
+
+.gray-bg {
+    background-color: #EDF0F4;
 }
 
 /* .cards:hover {

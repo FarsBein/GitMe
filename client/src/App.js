@@ -9,6 +9,7 @@ import Doc from './components/documentation/Doc';
 import Navbar from './components/navbar/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import CreateWeb from './components/createWeb/CreateWeb';
+import GithubAuth from './components/auth/GithubAuth';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Router>
         <Navbar/>
         <Switch>
+          <Route path='/github-auth' component={GithubAuth}/>
           <Route path='/create-website' component={CreateWeb}/>
           <Route path='/dashboard' component={Dashboard}/>
           <Route path='/showcase' component={Showcase}/>
