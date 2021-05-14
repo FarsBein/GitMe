@@ -76,7 +76,8 @@ function CreateWeb() {
                 <option>5</option>
               </ReactBootStrap.Form.Control>
             </ReactBootStrap.Form.Group>
-            <ReactBootStrap.Form.Label>CTRL+ RIGHT CLICK to select multiple</ReactBootStrap.Form.Label>
+            <br/>
+            <ReactBootStrap.Form.Label className='desktop'>(CTRL+ RIGHT CLICK) to select multiple</ReactBootStrap.Form.Label>
             <ReactBootStrap.Form.Check type="checkbox" id="use-all" className="mb-2" label="Use All"/> 
           </ReactBootStrap.Form> 
           <br/>

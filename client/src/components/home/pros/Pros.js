@@ -12,10 +12,13 @@ function Pros() {
                 <h1><b>Make and Forget</b></h1>
                 <p>
                     GITME will automatically update your site with any new public projects you make.
-                    Takes less than 5 minutes to make and you will never need to worry about it again                   
+                    Takes less than 5 minutes to make and you will never need to worry about it again.
+                    <p>
+                      Using github api your website can fitch new projects that you are working on and fetch
+                      project preview changes, etc.                 
+                    </p>  
                 </p>
-                <p>
-                </p>
+                
             </div>
         </ReactBootStrap.Container>
     </ReactBootStrap.Jumbotron>

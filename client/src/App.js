@@ -8,8 +8,8 @@ import Doc from './components/documentation/Doc';
 // import Navbar from './components/newNavbar';
 import Navbar from './components/navbar/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
-import CreateWeb from './components/createWeb/CreateWeb';
 import GithubAuth from './components/auth/GithubAuth';
+import CreateWeb from './components/createWeb/OldCreateWeb';
 
 
 function App() {
