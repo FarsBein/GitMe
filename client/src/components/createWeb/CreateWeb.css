@@ -13,23 +13,27 @@
     width: 100%;
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 1px 1px 5px 1px gray;
     /* color: white; */
 }
 
-.wide-textarea {
-    min-width: 100%
+.done-button {
+    width: 100%;
+    box-shadow: 1px 1px 5px 1px goldenrod;
 }
 
-.done-button {
-    width: 300px;
-    height: 50px;
-    box-shadow: 1px 1px 5px 1px rgb(255, 255, 150);
+.check-button {
+    width: 200px;
+    box-shadow: 1px 1px 5px 1px goldenrod;
 }
 
 .right {
     text-align: right;
+}
+
+.nameAvailable-icon {
+    width: 20px;
 }
 
 @media (max-width: 768px) {
