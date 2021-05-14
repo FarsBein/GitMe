@@ -24,7 +24,7 @@ function CreateWeb() {
       <ReactBootStrap.Container>
           <br/>
           <br/>
-          <ReactBootStrap.Form className='form-area'>
+          <ReactBootStrap.Form className='form-container'>
             <h3>Your Unique URL</h3> <br/>
             <ReactBootStrap.InputGroup className="mb-2">
               <ReactBootStrap.InputGroup.Prepend>
@@ -45,7 +45,7 @@ function CreateWeb() {
           </ReactBootStrap.Form>            
           <br/>
           <br/>
-          <ReactBootStrap.Form className='form-area'>
+          <ReactBootStrap.Form className='form-container'>
             <h3>About You</h3> <br/>
             <ReactBootStrap.InputGroup className="mb-2">
               <ReactBootStrap.Form.Group controlId="exampleForm.ControlTextarea1">
@@ -55,7 +55,7 @@ function CreateWeb() {
           </ReactBootStrap.Form>  
           <br/>
           <br/>
-          <ReactBootStrap.Form className='form-area'>
+          <ReactBootStrap.Form className='form-container'>
             <h3>Shorter About You :)</h3> <br/>
             <ReactBootStrap.InputGroup className="mb-2">
               <ReactBootStrap.Form.Group controlId="exampleForm.ControlTextarea1">
@@ -65,7 +65,7 @@ function CreateWeb() {
           </ReactBootStrap.Form>  
           <br/>
           <br/>
-          <ReactBootStrap.Form className='form-area'>
+          <ReactBootStrap.Form className='form-container'>
             <h3>Pick your Projects</h3> <br/>
             <ReactBootStrap.Form.Group controlId="exampleForm.ControlSelect2">
               <ReactBootStrap.Form.Control as="select" multiple>

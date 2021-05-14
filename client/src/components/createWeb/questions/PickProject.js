@@ -1,11 +1,19 @@
-import './questions.css';
-import '../SharedStyle.css';
+import './Questions.css';
 import * as ReactBootStrap from "react-bootstrap"
 
-function PickProject() {
+function PickProject({nextHandler,prevHandler}) {
   return (
-    <ReactBootStrap.Form className='form-area'>
-        <h3>Pick your Projects</h3> <br/>
+    <ReactBootStrap.Form className='form-container'>
+        <h3 className='space-between'>
+          Pick your Projects
+          <div>
+            <ReactBootStrap.Button variant="dark" onClick={() => nextHandler()} >
+                Next
+            </ReactBootStrap.Button>
+          </div>  
+        </h3> 
+
+        <br/>
         <ReactBootStrap.Form.Group controlId="exampleForm.ControlSelect2">
         <ReactBootStrap.Form.Control as="select" multiple>
             <option>1</option>
@@ -17,7 +25,7 @@ function PickProject() {
         </ReactBootStrap.Form.Group>
         <br/>
         <ReactBootStrap.Form.Label className='desktop'>CTRL+ RIGHT CLICK to select multiple</ReactBootStrap.Form.Label>
-        <ReactBootStrap.Form.Check type="checkbox" id="use-all" className="mb-2" label="Use All"/> 
+        <ReactBootStrap.Form.Check type="checkbox" id="use-all" label="Use all Projects"/> 
     </ReactBootStrap.Form> 
   );
 }

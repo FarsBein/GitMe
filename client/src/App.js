@@ -9,7 +9,7 @@ import Doc from './components/documentation/Doc';
 import Navbar from './components/navbar/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import GithubAuth from './components/auth/GithubAuth';
-import CreateWeb from './components/createWeb/OldCreateWeb';
+import CreateWeb from './components/createWeb/CreateWeb';
 
 
 function App() {
