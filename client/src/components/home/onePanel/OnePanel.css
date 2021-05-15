@@ -1,18 +1,20 @@
-.one-panel-container {
+.one-panel-jumbo {
     background-color: black;
     color: white;
     display: flex;
     align-items: center;
     padding: 30px;
-}
-
-.center {
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-    .home-image {
-        max-width: 400px;
-    }
+.one-panel-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.home-image {
+    max-width: 800px;
+}
+

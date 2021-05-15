@@ -6,9 +6,10 @@ import checkmark from '../../../images/checkmark.png';
 
 function OnePanel() {
   return (
-      <div className='jumbo one-panel-container'>
-        <ReactBootStrap.Container className='center'>
-            <img src={profiletab} className='home-image mobile'/>
+      <div className='jumbo one-panel-jumbo'>
+        <ReactBootStrap.Container className='one-panel-container'>
+            <img src={profiletab} className='home-image '/>
+            <br className=''/>
             <div className="home-text">
                 <h1>Quick. Easy. Hassle-free.</h1>
                 <p>
@@ -32,9 +33,7 @@ function OnePanel() {
                 <p>
                     <ReactBootStrap.Button variant="warning" className="button">Get Started</ReactBootStrap.Button>
                 </p>
-
             </div>
-            <img src={profiletab} className='home-image desktop'/>
         </ReactBootStrap.Container>          
       </div>
   );
