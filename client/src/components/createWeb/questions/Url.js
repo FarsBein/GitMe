@@ -1,44 +1,61 @@
 import './Questions.css';
 import * as ReactBootStrap from "react-bootstrap"
 import { useState } from 'react';
+const urls = ['coolKid','damnson','cool']
+
 
 function Url({nextHandler}) {
     const [loading,setLoading] = useState(false)
     const [nameAvailable,setNameAvailable] = useState(false)
-  
-    const checkButtonHandler = async () => {
+    const [currentUrl, setCurrentUrl] = useState('')
+    const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/? ]+/;
+    const [firstTry, setFirstTry] = useState(true)
+
+    const checkButtonHandler = async (e) => {
+      e.preventDefault()
+      setFirstTry(false)
       setLoading(true)
-      await new Promise(function(resolve) { 
-        setTimeout(resolve.bind(null, '3'), 100)
-      });
-  
+      const match = await urls.find(url => url == currentUrl.toLowerCase())
       setLoading(false)
-      setNameAvailable(!nameAvailable)
+      if (match == undefined && !format.test(currentUrl) && currentUrl !=='') {
+        setNameAvailable(true)
+      } else {
+        setNameAvailable(false)
+      }
     }
    
+    const onChangeHandler = (event) => {
+      setCurrentUrl(event.target.value)
+    }
+
   return (
       <ReactBootStrap.Form className='form-container'>
           <h3 className='space-between'>
             Your Unique URL
-            <ReactBootStrap.Button variant="dark" onClick={() => nextHandler()} >
-                Next
-            </ReactBootStrap.Button>
           </h3> 
           <br/>
           <ReactBootStrap.InputGroup className="mb-2">
           <ReactBootStrap.InputGroup.Prepend>
               <ReactBootStrap.InputGroup.Text>www.gitme.ml/</ReactBootStrap.InputGroup.Text>
           </ReactBootStrap.InputGroup.Prepend>
-          <ReactBootStrap.FormControl id="url" placeholder="Username"  type="text" required isValid={nameAvailable} isInvalid={!nameAvailable}  />
+          <ReactBootStrap.FormControl id="url" placeholder="Username"  
+            type="text" required isValid={nameAvailable} 
+            isInvalid={firstTry? false : !nameAvailable}  
+            onChange={(e) => onChangeHandler(e)}
+            />
           <ReactBootStrap.Form.Control.Feedback type="invalid">
-              &nbsp;Username is Already Taken!
+              &nbsp;Username is Already Taken or It Cant be used
           </ReactBootStrap.Form.Control.Feedback>
+          <br/>
           </ReactBootStrap.InputGroup>
-          <div className='right'>
-              <ReactBootStrap.Button variant="dark" onClick={() => checkButtonHandler()}>
-                {loading ? <ReactBootStrap.Spinner animation="border" /> : 'Check Availability'}
-              </ReactBootStrap.Button>
-          </div>
+          <p>check first before moving to next</p>
+          <ReactBootStrap.Button type="submit" variant="dark" onClick={(e) => checkButtonHandler(e)}>
+            {loading ? <ReactBootStrap.Spinner animation="border" /> : 'Check Availability'}
+          </ReactBootStrap.Button>
+          &nbsp;
+          <ReactBootStrap.Button variant="dark" onClick={() => nextHandler()} disabled={!nameAvailable}>
+            Next
+        </ReactBootStrap.Button>
       </ReactBootStrap.Form>      
   );
 }

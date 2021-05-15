@@ -1,1 +1,0 @@
-const urls = ['coolKid','damnson']
