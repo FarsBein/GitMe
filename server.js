@@ -87,7 +87,7 @@ app.get('/auth/github/callback', passport.authenticate('github', { failureRedire
 // 3 handle error in connection
 app.get('/auth/error', (req, res) => res.send('Unknown Error'))
 
-// 4 handle successful to connection
+// 4 handle successful connection
 app.get('/auth/pass', (req, res) => res.send('SUCCESSFUL'))
 
 // route 
