@@ -1,2 +1,2 @@
 # GITME
-Allows users to create personal websites using only their GitHub account
+Allows users to create personal websites using their GitHub and Linkedin pages
