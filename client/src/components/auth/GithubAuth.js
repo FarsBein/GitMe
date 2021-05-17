@@ -5,9 +5,8 @@ function GithubAuth() {
   return (
     <div className="jumbo-github-auth">
         <p>
-            Github Auth Connect           
+          <b>CONNECTED SUCCESSFULLY</b>      
         </p>
-
     </div>
   );
 }

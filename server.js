@@ -1,9 +1,17 @@
 const express = require('express');
 require('dotenv').config() 
+var cors = require('cors')
 
-//set up ports
+//set up ports 
 const app = express();
 const PORT = process.env.PORT || 8000;
+
+//allow external requests
+app.use(cors()) 
+
+//parse json data
+app.use(express.json());
+app.use(express.urlencoded({extended: true})); // true for any type of data
 
 //connect to mongoose
 const mongoose = require('mongoose')
@@ -14,7 +22,6 @@ mongoose.connect(process.env.MONGODB_URI, {
     if (err) throw err
     console.log('MongoDB connection is established')
 })
-
 
 //Github OAuth (checked out https://www.npmjs.com/package/passport-github)
 const GitHubStrategy = require('passport-github').Strategy;
@@ -66,13 +73,22 @@ passport.use(new GitHubStrategy({
   }
 ));
 
-app.get('/auth/github', passport.authenticate('github'))
+// steps to take when authenticating user
 
-app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }),
+// 1 make the call to github 
+app.get('/auth/github', passport.authenticate('github')) 
+
+// 2 receive and handle the response
+app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/auth/error' }), //was "/login"
   (req, res) => {
-    res.redirect('/dashboard');
+    res.redirect('/auth/pass'); //was "/dashboard"
 });
 
+// 3 handle error in connection
+app.get('/auth/error', (req, res) => res.send('Unknown Error'))
+
+// 4 handle successful to connection
+app.get('/auth/pass', (req, res) => res.send('SUCCESSFUL'))
 
 // route 
 app.get('/', (req,res)=> {

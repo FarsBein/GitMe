@@ -3,8 +3,15 @@ import '../../SharedStyle.css';
 import * as ReactBootStrap from "react-bootstrap"
 import profiletab from '../../../images/profiletab.svg';
 import checkmark from '../../../images/checkmark.png';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function OnePanel() {
+
+  const getStartedHandle = () => {
+    axios.get(`http://localhost:8000/auth/github`)
+  }
+
   return (
       <div className='jumbo one-panel-jumbo'>
         <ReactBootStrap.Container className='one-panel-container'>
@@ -31,7 +38,11 @@ function OnePanel() {
                 </p>
                 <br/>
                 <p>
-                    <ReactBootStrap.Button variant="warning" className="button">Get Started</ReactBootStrap.Button>
+                    <Link to='/github-auth'>
+                        <ReactBootStrap.Button variant="warning" size='lg' onClick={()=>getStartedHandle()} className="button">
+                            Get Started
+                        </ReactBootStrap.Button>
+                    </Link> 
                 </p>
             </div>
         </ReactBootStrap.Container>          
