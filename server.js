@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors')
 const authRoutes = require("./routes/auth-routes")
+const mongoose = require('mongoose')
+
 require('dotenv').config() 
 
 // passport 
@@ -21,7 +23,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true})); // true for any type of data
 
 //connect to mongoose
-const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true, 
     useUnifiedTopology: true // to avoid annoying pop ups asking for upgrade
