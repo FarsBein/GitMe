@@ -29,7 +29,7 @@ router.get('/error', (req, res) => res.send('Unknown Error'))
 // 4 handle successful connection
 router.get('/pass', (req, res) => res.send('SUCCESSFUL'))
 
-//for testing <<<
+//for testing <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 router.get('/dashboard', isLoggedin, (req,res)=> {
     console.log(req.user)
     res.sendFile(__dirname + '/dashboard.html');
@@ -47,6 +47,6 @@ router.get('/logout', isLoggedin, (req, res) => {
     req.logOut();
     res.redirect('/auth/login');
 });
-//for testing >>>
+//for testing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 module.exports = router
