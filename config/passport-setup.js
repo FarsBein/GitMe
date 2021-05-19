@@ -20,7 +20,7 @@ passport.use(
     User.findOne({ githubId: profile.id }).then( async (currentUser) => {
       // console.log('_json.location:', profile._json.location)
       // if not object create a new one
-      if (!currentUser) {
+      if (!currentUser) { 
         const newUser = await new User({
           username: profile.username,
           githubId: profile.id
