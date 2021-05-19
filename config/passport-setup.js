@@ -27,12 +27,11 @@ passport.use(
         }).save()
         
         const repos = await getRepos(profile.username)
-        console.log('repos:',repos)
         const newWebsiteDetails = await new WebsiteDetails({
           username: profile.username,
           github: profile.profileUrl,
           location: profile._json.location,
-          repo: repos,
+          repos: repos,
           linkedin: '',
           aboutMe:'',
           shortAboutMe:''

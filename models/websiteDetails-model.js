@@ -19,7 +19,12 @@ const websiteDetailsSchema = new Schema({
     linkedin: {
         type: String,
     }, 
-    repos: [String],
+    repos: [{
+        name:String,
+        url:String,
+        description:String,
+        image:String
+    }],
     resume: {
         type: String,
     }, 
