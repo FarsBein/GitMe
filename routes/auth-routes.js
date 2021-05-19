@@ -13,7 +13,7 @@ const isLoggedin = function (req,res,next) {
 }  
 
 router.get('/isLoggedin', (req, res) => {
-    res.send(req.user)
+    res.send(req.user) // user info may change it later
 });
 
 // steps to take when authenticating user
@@ -37,7 +37,6 @@ router.get('/pass', (req, res) => res.send('SUCCESSFUL'));
 
 //for testing <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 router.get('/dashboard', isLoggedin, (req,res)=> {
-    console.log(req.user)
     res.sendFile(__dirname + '/dashboard.html');
 })
 

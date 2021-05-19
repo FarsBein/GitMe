@@ -20,11 +20,15 @@ passport.use(
         new User({
           username: profile.username,
           githubId: profile.id
-        }).save()
-      } 
+        }).save().then((newUser)=>{
+          // console.log('newUser:',newUser)
+          callBack(null, newUser); // return to serialize
+        }); 
+      } else {
+        return callBack(null, currentUser); // return to serialize
+      }
     })
-
     // return profile data
-    return callBack(null, profile);
+    // return callBack(null, profile);
   }
 ));

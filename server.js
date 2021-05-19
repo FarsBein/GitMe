@@ -1,21 +1,26 @@
+// default imports
 const express = require('express');
 const cors = require('cors')
-const authRoutes = require("./routes/auth-routes")
 const mongoose = require('mongoose')
-
 require('dotenv').config() 
 
-// passport 
+// db models import
+const User = require('./models/user-model')
+const WebsiteDetails = require('./models/websiteDetails-model')
+
+// passport imports
 const passport = require('passport')
 const session = require('express-session')
 const passportSetup = require('./config/passport-setup')
 
+// routes import 
+const authRoutes = require("./routes/auth-routes")
 
 //set up ports 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-//allow external requests
+//allow external requests CORS
 app.use(cors()) 
 
 //parse json data
@@ -39,10 +44,12 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         httpOnly:true,                  // means to not save session on browser only on server
-        secure: false,                  // only bc I am testing it on my local env change to true latter
-        maxAge: 2 * 24 * 60 * 60 * 1000 // two day (first number is days)
+        secure: false,                  // only bc I am testing it on my local env change to true later
+        maxAge: 2 * 24 * 60 * 60 * 1000 // two days (first number is days)
     }
 }))
+
+// Passport 
 
 app.use(passport.initialize())
 app.use(passport.session())
@@ -52,10 +59,9 @@ passport.serializeUser(function (user, callBack) {
 })
 passport.deserializeUser(function (id, callBack) {
     // check if the id is a real user in my database. If yes retrieve user data
-    // User.findById((id)).then((user) => {
-    //     callBack(null, user)
-    // }) //it is async and returns a promise so it will wait 
-    callBack(null, id)
+    User.findById((id)).then((user) => {
+        callBack(null, user);
+    })  
 })
 
 // routes 
