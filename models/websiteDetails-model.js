@@ -5,30 +5,26 @@ const websiteDetailsSchema = new Schema({
     username: {
         type: String,
         required:true,
+        unique: true
     },
     aboutMe: {
         type: String,
-        required:true,
     },
     shortAboutMe: {
         type: String,
-        required:true,
     },
     github: {
         type: String,
-        required:true,
     },
     linkedin: {
         type: String,
-        required:false,
     }, 
+    repos: [String],
     resume: {
         type: String,
-        required:false,
     }, 
     location: {
         type: String,
-        required:false,
     }
 })
 

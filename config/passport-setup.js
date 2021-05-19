@@ -1,9 +1,12 @@
 const passport = require('passport')
 const GitHubStrategy = require('passport-github').Strategy;
-const User = require('../models/user-model')
-require('dotenv').config() 
 
-// console.log(process.env.GITHUB_CLIENT_ID)
+const User = require('../models/user-model')
+const WebsiteDetails = require('../models/websiteDetails-model')
+
+const {getRepos} = require('./repo-request')
+
+require('dotenv').config() 
 
 
 passport.use(
@@ -14,16 +17,29 @@ passport.use(
   },
   (accessToken, refreshToken, profile, callBack) => {    
     // check if user is in the database
-    User.findOne({ githubId: profile.id }).then((currentUser) => {
+    User.findOne({ githubId: profile.id }).then( async (currentUser) => {
+      // console.log('_json.location:', profile._json.location)
       // if not object create a new one
       if (!currentUser) {
-        new User({
+        const newUser = await new User({
           username: profile.username,
           githubId: profile.id
-        }).save().then((newUser)=>{
-          // console.log('newUser:',newUser)
-          callBack(null, newUser); // return to serialize
-        }); 
+        }).save()
+        
+        const repos = await getRepos(profile.username)
+        console.log('repos:',repos)
+        const newWebsiteDetails = await new WebsiteDetails({
+          username: profile.username,
+          github: profile.profileUrl,
+          location: profile._json.location,
+          repo: repos,
+          linkedin: '',
+          aboutMe:'',
+          shortAboutMe:''
+        }).save()
+
+        console.log('newWebsiteDetails:', newWebsiteDetails)
+        return callBack(null, newUser); // return to serialize
       } else {
         return callBack(null, currentUser); // return to serialize
       }
