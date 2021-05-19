@@ -29,8 +29,10 @@ app.use(express.urlencoded({extended: true})); // true for any type of data
 
 //connect to mongoose
 mongoose.connect(process.env.MONGODB_URI, {
+    //for the annoying pop ups
+    useCreateIndex: true, 
     useNewUrlParser: true, 
-    useUnifiedTopology: true // to avoid annoying pop ups asking for upgrade
+    useUnifiedTopology: true 
 }, (err) => {
     if (err) throw err
     console.log('MongoDB connection is established')
