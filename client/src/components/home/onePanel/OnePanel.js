@@ -28,10 +28,10 @@ function OnePanel() {
                     <h5><img src={checkmark} className='checkmark-icon'/> Connect to your GitHub account</h5>
                 </p>
                 <p>
-                    <h5><img src={checkmark} className='checkmark-icon'/> Write Short Description About yourself</h5>
+                    <h5><img src={checkmark} className='checkmark-icon'/> Write Short Description or use your Linkedin bio</h5>
                 </p>
                 <p>
-                    <h5><img src={checkmark} className='checkmark-icon'/> Pick Your URL Name</h5>
+                    <h5><img src={checkmark} className='checkmark-icon'/> Pick Your projects</h5>
                 </p>
                 <p>
                     <h5><img src={checkmark} className='checkmark-icon'/> Done!</h5>
