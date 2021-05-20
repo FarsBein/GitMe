@@ -6,3 +6,18 @@
     box-shadow: 1px 1px 5px 1px gray;
     /* color: white; */
 }
+
+.linkedin-avatar {
+    width: 200px;
+}
+
+.upload-icon {
+    width: 250px;
+}
+
+.center-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

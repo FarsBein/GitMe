@@ -1,11 +1,12 @@
 import './CreateWeb.css';
 import '../SharedStyle.css';
 import Url from './questions/Url'
-import AboutYou from './questions/AboutYou'
+import AboutMe from './questions/AboutMe'
 import PickProject from './questions/PickProject'
 import { useState } from 'react';
 import {useForm} from 'react-hook-form'
-
+import Linkedin from './questions/Linkedin';
+import UploadResume from './questions/UploadResume'
 
 function CreateWeb() {
   const {url, aboutMe, projects} = useForm()
@@ -23,9 +24,10 @@ function CreateWeb() {
   return (
     <div className='jumbo center'>
         <div className='container center '>
-            {formStep==1?<Url         nextHandler={nextHandler}/>:''}
-            {formStep==2?<AboutYou    nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
-            {formStep==3?<PickProject nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
+            {formStep==1?<Linkedin     nextHandler={nextHandler}/>:''}
+            {formStep==2?<AboutMe      nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
+            {formStep==3?<PickProject  nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
+            {formStep==4?<UploadResume nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
         </div>  
     </div>
   );
