@@ -13,7 +13,13 @@ const isLoggedin = function (req,res,next) {
 }  
 
 router.get('/isLoggedin', (req, res) => {
-    res.send(req.user) // user info may change it later
+    if (req.user) {
+        console.log('req.user:',true)
+        res.send('true');
+    } else {
+        console.log('req.user:',false)
+        res.send('');
+    }
 });
 
 // steps to take when authenticating user
@@ -24,7 +30,8 @@ router.get('/github', passport.authenticate('github'));
 // 2 receive and handle the response after github authenticating user
 router.get('/github/callback', passport.authenticate('github', { failureRedirect: '/auth/login' }), //was "/auth/error"
     (req, res) => {
-        res.redirect('/auth/dashboard'); //was "/auth/pass"
+        console.log('successfully logged in')
+        res.redirect('http://localhost:3000/dashboard'); //was "/auth/pass"
 });
 
 // 3 handle error in connection
@@ -50,7 +57,8 @@ router.get('/login', (req,res)=> {
 
 router.get('/logout', isLoggedin, (req, res) => {
     req.logOut();
-    res.redirect('/auth/login');
+    console.log('successfully logged out')
+    res.redirect('http://localhost:3000');
 });
 //for testing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

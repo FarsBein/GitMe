@@ -8,8 +8,12 @@ import axios from 'axios';
 
 function OnePanel() {
 
-  const getStartedHandle = () => {
-    axios.get(`http://localhost:8000/auth/github`)
+  const getStartedHandle = (e) => {
+    e.preventDefault()
+    window.location = "http://localhost:8000/auth/login"
+    // axios.get('/auth/github').then((res) => {
+    //     console.log('res:',res)
+    // })
   }
 
   return (
@@ -39,7 +43,7 @@ function OnePanel() {
                 <br/>
                 <p>
                     <Link to='/github-auth'>
-                        <ReactBootStrap.Button variant="warning" size='lg' onClick={()=>getStartedHandle()} className="button">
+                        <ReactBootStrap.Button variant="warning" size='lg' onClick={(e)=>getStartedHandle(e)} className="button">
                             Get Started
                         </ReactBootStrap.Button>
                     </Link> 

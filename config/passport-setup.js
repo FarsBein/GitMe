@@ -36,7 +36,8 @@ passport.use(
           aboutMe:'',
           shortAboutMe:''
         }).save()
-
+        
+        console.log('newUser:', newUser)
         console.log('newWebsiteDetails:', newWebsiteDetails)
         return callBack(null, newUser); // return to serialize
       } else {

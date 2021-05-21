@@ -21,7 +21,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 //allow external requests CORS
-app.use(cors()) 
+app.use(cors())
 
 //parse json data
 app.use(express.json());
@@ -52,7 +52,6 @@ app.use(session({
 }))
 
 // Passport 
-
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -68,7 +67,7 @@ passport.deserializeUser(function (id, callBack) {
 
 // routes 
 app.get('/', (req,res)=> {
-    res.status(200).send('WE ARE WORKING FROM HOME!')
+    res.send('WE ARE WORKING FROM HOME')
 })
 
 app.use('/auth', authRoutes)
