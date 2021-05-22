@@ -15,13 +15,14 @@ const passportSetup = require('./config/passport-setup')
 
 // routes import 
 const authRoutes = require("./routes/auth-routes")
+const editWebsite = require("./routes/edit-website-routers")
 
 //set up ports 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 //allow external requests CORS
-app.use(cors())
+app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
 
 //parse json data
 app.use(express.json());
@@ -39,7 +40,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
 
 //Github OAuth (checked out https://www.npmjs.com/package/passport-github)
-
 app.use(session({
     secret: process.env.SECRET_SESSION_KEY,
     resave: false,
@@ -71,6 +71,19 @@ app.get('/', (req,res)=> {
 })
 
 app.use('/auth', authRoutes)
+
+app.use('/edit', editWebsite)
+
+app.get('/profile', (req, res) => {
+    if (req.user) {
+        WebsiteDetails.find({ username: req.user.username }).then(
+            (user) => {
+                return res.status(200).send(user[0])
+        })
+    } else {
+      return res.status(403).send({ message: 'you are not logged in' })
+    }
+})
 
 // listener 
 app.listen(PORT, console.log(`Server is starting at port ${PORT}`));

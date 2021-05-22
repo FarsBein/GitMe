@@ -14,10 +14,10 @@ const isLoggedin = function (req,res,next) {
 
 router.get('/isLoggedin', (req, res) => {
     if (req.user) {
-        console.log('req.user:',true)
+        console.log('isLoggedin req.user:',req.user)
         res.send('true');
     } else {
-        console.log('req.user:',false)
+        console.log('isLoggedin req.user:',req.user)
         res.send('');
     }
 });
