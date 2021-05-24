@@ -4,7 +4,8 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config() 
 
-// import cloudinary to save images and pdf
+// import cloudinary to save images and pdf 
+// changed my mind not sure if I am going to use it now
 const cloudinary = require('cloudinary').v2
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
@@ -92,6 +93,7 @@ app.get('/profile', (req, res) => {
       return res.status(403).send({ message: 'you are not logged in' })
     }
 })
+
 
 // listener 
 app.listen(PORT, console.log(`Server is starting at port ${PORT}`));

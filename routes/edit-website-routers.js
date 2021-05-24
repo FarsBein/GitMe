@@ -51,10 +51,6 @@ router.post('/about-me', async (req,res) => {
     }
 })
 
-const findReposByUrl = (reposUrl) => {
-
-}
-
 router.post('/repos', async (req,res) => {
     try {
         const reposUrl = req.body.reposUrl
@@ -62,15 +58,15 @@ router.post('/repos', async (req,res) => {
         const profile = await User.findOne({username})
         console.log('received reposUrl:',reposUrl)
         if (reposUrl == 'all') { 
-            const updatedUser = await WebsiteDetails.findOneAndUpdate(username,
+            const updatedWebsite = await WebsiteDetails.findOneAndUpdate(username,
                 {   
                     repos: profile.repos
                 },{
                     new: true // return the updated user
             })
-            res.json(updatedUser)
+            res.json(updatedWebsite)
         } else {
-            const updatedUser = await WebsiteDetails.findOneAndUpdate(username,
+            const updatedWebsite = await WebsiteDetails.findOneAndUpdate(username,
                 {   
                     repos: profile.repos.filter((repo) => {
                         return reposUrl.includes(repo.url)
@@ -78,8 +74,29 @@ router.post('/repos', async (req,res) => {
                 },{
                     new: true // return the updated user
             })
-            res.json(updatedUser)
+            res.json(updatedWebsite)
         }
+    } catch (err) {
+        res.json({err: err.message})
+    }
+})
+
+// for some reason req.user is returning unidentified
+// for now I have passed username from createWeb to UploadResume bc I am unable to use req.user
+router.post('/upload-resume', async (req,res) => {
+    try {
+        const username = req.body.username
+        const file = req.body.file
+        console.log('received file url:', file)
+        console.log('username:', username)
+
+        const updatedWebsite = await WebsiteDetails.findOneAndUpdate(username,
+            {   
+                resume: file
+            },{
+                new: true // return the updated user
+        })
+        res.json(updatedWebsite)
     } catch (err) {
         res.json({err: err.message})
     }

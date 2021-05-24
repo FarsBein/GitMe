@@ -15,6 +15,7 @@ function CreateWeb() {
   const [formStep, setFormStep] = useState(1)
   const [loggedIn, setLoggedIn] = useState(true)
   const [repos, setRepos] = useState(undefined)
+  const [username, setUsername] = useState(undefined)
 
   const nextHandler = () => {
     setFormStep(formStep+1)
@@ -28,6 +29,7 @@ function CreateWeb() {
     try {
       const res = await axios.get('http://localhost:8000/profile',{ withCredentials: true})
       setRepos(res.data.repos)
+      setUsername(res.data.username)
       setLoggedIn(true)
       console.log('/profile data:', res.data)
       console.log('res.data.repos:', res.data.repos)
@@ -49,7 +51,8 @@ function CreateWeb() {
             {formStep==1?<Linkedin     nextHandler={nextHandler}/>: ''}
             {formStep==2?<AboutMe      nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
             {formStep==3?<PickProject  nextHandler={nextHandler} prevHandler={prevHandler} repos={repos}/>:''}
-            {formStep==4?<UploadResume nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
+            {formStep==4?<UploadResume nextHandler={nextHandler} prevHandler={prevHandler} username={username}/>:''}
+            {formStep==5?<Redirect to='/dashboard'/>:''}
         </div>  
     </div>
   );
