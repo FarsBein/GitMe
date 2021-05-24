@@ -4,6 +4,15 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config() 
 
+// import cloudinary to save images and pdf
+const cloudinary = require('cloudinary').v2
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+})
+
+
 // db models import
 const User = require('./models/user-model')
 const WebsiteDetails = require('./models/websiteDetails-model')
