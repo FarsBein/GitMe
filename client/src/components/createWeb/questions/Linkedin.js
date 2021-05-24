@@ -31,9 +31,10 @@ function Linkedin({nextHandler}) {
     }
 
     const saveChanges = async () => {
-      await axios.post('http://localhost:8000/edit/linkedin', {
+      const updatedProfile = await axios.post('http://localhost:8000/edit/linkedin', {
         linkedin: currentUsername
       },{ withCredentials: true})
+      console.log('updatedProfile:',updatedProfile.data)
       nextHandler()
     }
 

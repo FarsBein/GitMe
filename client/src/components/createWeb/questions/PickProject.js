@@ -13,9 +13,10 @@ function PickProject({nextHandler,prevHandler, repos}) {
   }
 
   const saveChanges = async () => {
-    await axios.post('http://localhost:8000/edit/repos', {
-      repos: useAll ? repos : projects
+    const updatedProfile = await axios.post('http://localhost:8000/edit/repos', {
+      reposUrl: useAll ? 'all' : projects
     },{ withCredentials: true})
+    console.log('pick project:',updatedProfile.data)
     nextHandler()
   }
 

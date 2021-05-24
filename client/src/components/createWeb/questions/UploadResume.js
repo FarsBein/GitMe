@@ -10,7 +10,7 @@ function UploadResume({nextHandler,prevHandler}) {
     return (
         <div>
             <ReactBootStrap.Form className='form-container center-col' onClick={() => setUploadComplete(!uploadComplete)}>
-                <h2>Upload Resume</h2>
+                <h2>Upload Resume</h2><p>click to upload</p>
                 {
                     uploadComplete ? 
                         <ReactBootStrap.Image src={checkmark} className={'upload-icon'} thumbnail/> : 

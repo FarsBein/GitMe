@@ -10,7 +10,7 @@ const websiteDetailsSchema = new Schema({
     aboutMe: {
         type: String,
     },
-    shortAboutMe: {
+    headline: {
         type: String,
     },
     github: {

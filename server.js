@@ -33,7 +33,8 @@ mongoose.connect(process.env.MONGODB_URI, {
     //for the annoying pop ups
     useCreateIndex: true, 
     useNewUrlParser: true, 
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
+    useFindAndModify: false // for findOneAndUpdate() to not default to  useFindAndModify
 }, (err) => {
     if (err) throw err
     console.log('MongoDB connection is established')
@@ -75,11 +76,9 @@ app.use('/auth', authRoutes)
 app.use('/edit', editWebsite)
 
 app.get('/profile', (req, res) => {
+    console.log('profile req.user:',req.user)
     if (req.user) {
-        WebsiteDetails.find({ username: req.user.username }).then(
-            (user) => {
-                return res.status(200).send(user[0])
-        })
+        return res.status(200).send(req.user)
     } else {
       return res.status(403).send({ message: 'you are not logged in' })
     }
