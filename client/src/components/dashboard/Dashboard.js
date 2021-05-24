@@ -37,7 +37,7 @@ function Dashboard() {
           <Link>
             <div className="cards">
                 <div onClick={(e)=>checkIfLoggedin(e)}>
-                  <h4><b>is logged in ( See website )</b></h4> 
+                  <h4><b>My Website</b></h4> 
                 </div>
             </div>
           </Link>

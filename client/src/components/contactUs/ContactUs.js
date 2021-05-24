@@ -11,6 +11,7 @@ function ContactUs() {
                 <p>
                     Need help, support, or you just want to talk don't hastate to contact us!                   
                 </p>
+                <p>help@gitme.com</p>
             </div>
         </ReactBootStrap.Container>
     </ReactBootStrap.Jumbotron>

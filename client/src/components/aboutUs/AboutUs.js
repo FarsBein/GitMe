@@ -15,7 +15,7 @@ function AboutUs() {
                 <p>
                     Well more like about me. I am computer science student interested in creating useful applications
                     to show off in my family gatherings. Initially I was planning to create a website builder 
-                    for local businesses that only have social media presences but at the 
+                    for local businesses that only have social media presence but at the 
                     same time I wanted to fix the look of my personal website. So I thought why not kill two 
                     birds with one stone kinda of thing and make a personal website builder.               
                 </p>
