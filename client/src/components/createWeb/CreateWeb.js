@@ -16,9 +16,8 @@ function CreateWeb() {
   const [loggedIn, setLoggedIn] = useState(true)
   const [repos, setRepos] = useState(undefined)
 
-  const nextHandler = (event) => {
+  const nextHandler = () => {
     setFormStep(formStep+1)
-    console.log('................>',formStep)
   }
 
   const prevHandler = (event) => {
