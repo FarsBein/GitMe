@@ -41,7 +41,7 @@ function Dashboard() {
                 </div>
             </div>
           </Link>
-          <Link >
+          <Link>
             <div className="cards" onClick={(e)=>logoutHandle(e)}>
                 <div>
                   <h4><b>Logout</b></h4> 
