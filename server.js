@@ -94,6 +94,16 @@ app.get('/profile', (req, res) => {
     }
 })
 
+app.post('/profile', async (req, res) => {
+    const username = req.body.username
+    console.log('post profile username:',username)
+    try {
+        const websiteDetails = await WebsiteDetails.find({username})
+        res.json(websiteDetails[0])
+    } catch (err) {
+        res.json({err: err.message})
+    }
+})
 
 // listener 
 app.listen(PORT, console.log(`Server is starting at port ${PORT}`));

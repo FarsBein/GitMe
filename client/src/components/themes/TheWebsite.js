@@ -1,9 +1,9 @@
-import Homepage from './default/homepage/Homepage'
+import Default from './default/homepage/Homepage'
 
 function theWebsite() {
   return (
       <div className='center'>
-        <Homepage/>
+        <Default/>
       </div>
   );
 }

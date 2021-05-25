@@ -5,7 +5,8 @@ const websiteDetailsSchema = new Schema({
     username: {
         type: String,
         required:true,
-        unique: true
+        unique: true,
+        lowercase: true
     },
     aboutMe: {
         type: String,

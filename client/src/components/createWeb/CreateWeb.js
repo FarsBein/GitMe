@@ -21,7 +21,7 @@ function CreateWeb() {
     setFormStep(formStep+1)
   }
 
-  const prevHandler = (event) => {
+  const prevHandler = () => {
     setFormStep(formStep-1)
   }
 
