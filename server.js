@@ -105,5 +105,10 @@ app.post('/profile', async (req, res) => {
     }
 })
 
+app.use(express.static('./themes'));
+app.get('/to', async (req, res) => {
+    res.sendFile(__dirname + '/themes/default.html');
+})
+
 // listener 
 app.listen(PORT, console.log(`Server is starting at port ${PORT}`));
