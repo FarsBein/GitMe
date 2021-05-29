@@ -96,9 +96,10 @@ app.get('/profile', (req, res) => {
 
 app.post('/profile', async (req, res) => {
     const username = req.body.username
-    console.log('post profile username:',username)
+    console.log('POST profile username:',username)
     try {
         const websiteDetails = await WebsiteDetails.find({username})
+        console.log('POST websiteDetails:',websiteDetails[0])
         res.json(websiteDetails[0])
     } catch (err) {
         res.json({err: err.message})

@@ -1,13 +1,43 @@
-console.log('links:',data.links)
+const retrieveData = async () => {
+    const url = 'http://localhost:8000/profile'
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify({
+            username:'farsbein'
+        })
+    })
+    const profile = await response.json()
+    console.log('profile:', profile)
 
-const navbarLinks = (links) => {
+    const data = 
+    {
+        projects: profile.repos,
+        aboutMe: {
+            name: profile.username,
+            headline: profile.headline,
+            description: profile.description,
+            email: "test@ryerson.ca"
+        },
+        links: {
+            GitHub: profile.github,
+            LinkedIn: profile.linkedin,
+            Resume: profile.resume
+        }
+    }
+    return data
+}
+
+const navbarLinks = (links,aboutMe) => {
     let overlayHtml = ""
 
     //for the first value in the navbar (your name)
     let navbarHtml = 
     '<li class="nav-item">' +
         '<a href="/">' +
-            data.aboutMe.name +
+            aboutMe.name +
         '</a>' +
     '</li>';
     for (let linkName in links) {
@@ -82,7 +112,12 @@ const githubMoreBtn = (links) => {
     aboutMeBody.innerHTML = html;
 } 
 
-navbarLinks(data.links)
-aboutMe(data.aboutMe)
-displayProjects(data.projects)
-githubMoreBtn(data.links)
+
+(async () => {
+    let data = await retrieveData()
+    console.log('data:',data)
+    navbarLinks(data.links,data.aboutMe)
+    aboutMe(data.aboutMe)
+    displayProjects(data.projects)
+    githubMoreBtn(data.links)
+})()
