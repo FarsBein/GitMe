@@ -8,26 +8,18 @@ import axios from 'axios';
 const urls = ['seed', 's']
 
 function Linkedin({nextHandler}) {
-    const [loading,setLoading] = useState(false)
     const [userExist,setUserExist] = useState(false)
     const [currentUsername, setCurrentUsername] = useState('')
     const [firstTry, setFirstTry] = useState(true)
 
-    const checkButtonHandler = async (e) => {
-      e.preventDefault()
-      setFirstTry(false)
-      setLoading(true) // button loading
-      const match = await urls.find(url => url == currentUsername.toLowerCase())
-      setLoading(false)
-      if (match) {
-        setUserExist(true)
-      } else {
-        setUserExist(false)
-      }
-    }
    
     const onChangeHandler = (event) => {
-      setCurrentUsername(event.target.value)
+      setCurrentUsername(event.target.value.replace(/\s/g, ''))
+      if (event.target.value.replace(/\s/g, '') == '') {
+        setUserExist(false)
+      } else {
+        setUserExist(true)
+      }
     }
 
     const saveChanges = async () => {
@@ -62,10 +54,6 @@ function Linkedin({nextHandler}) {
               <br/>
             </ReactBootStrap.InputGroup>
             <p>search your linkedin and we will get your bio for you</p>
-            <ReactBootStrap.Button type="submit" variant="dark" onClick={(e) => checkButtonHandler(e)}>
-              {loading ? <ReactBootStrap.Spinner animation="border" /> : 'Check Availability'}
-            </ReactBootStrap.Button>
-            &nbsp;
             <ReactBootStrap.Button variant="dark" onClick={() => saveChanges()} disabled={!userExist}>
               Next
             </ReactBootStrap.Button>

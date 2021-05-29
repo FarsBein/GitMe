@@ -41,7 +41,7 @@ function MyCode() {
                 </a>
             </p>
             <p>2. Copy your uniquely generated data to a file and name it "Data.js"</p>
-            <p>3. You are going to host your static website on Github Page</p>
+            <p>3. Host your static website on Github Page</p>
             <p>4. Enjoy!</p>         
           </div>
           <div>

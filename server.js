@@ -4,6 +4,9 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config() 
 
+// functions
+const {getRepos} = require('./config/repo-request')
+
 // import cloudinary to save images and pdf 
 // changed my mind not sure if I am going to use it now
 const cloudinary = require('cloudinary').v2
@@ -85,12 +88,35 @@ app.use('/auth', authRoutes)
 
 app.use('/edit', editWebsite)
 
-app.get('/profile', (req, res) => {
-    console.log('profile req.user:',req.user)
+app.get('/profile', async (req, res) => {
+    const username = req.user.username
+    console.log('profile req.user:',username)
     if (req.user) {
-        return res.status(200).send(req.user)
+        const websiteDetails = await WebsiteDetails.find({username})
+        return res.status(200).send(websiteDetails[0])
     } else {
       return res.status(403).send({ message: 'you are not logged in' })
+    }
+})
+
+app.get('/profile/repos', async (req, res) => {
+    try {
+        const username = req.user.username
+        if (req.user) {
+            const repos = await getRepos(username)
+            console.log('/profile/repos repos:',repos)
+            const updatedUser = await User.findOneAndUpdate(username,
+            {   
+                repos: repos,
+            },{
+                new: true // return the updated post
+            })
+            return res.status(200).send(repos)
+        } else {
+        return res.status(403).send({ message: 'you are not logged in' })
+        }
+    } catch (err) {
+            res.json({err: err.message})
     }
 })
 

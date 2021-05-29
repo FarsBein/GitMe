@@ -7,6 +7,8 @@ function PickProject({nextHandler,prevHandler, repos}) {
   const [projects, setProjects] = useState('')
   const [useAll, setUseAll] = useState(false)
 
+  console.log('PickProject repos:',repos)
+
   const onChangePicks = async (event) => {
     let value = await Array.from(event.target.selectedOptions, option => option.value);
     setProjects(value)

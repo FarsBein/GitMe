@@ -11,8 +11,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 
 function CreateWeb() {
-  const {url, aboutMe, projects} = useForm()
-  const [formStep, setFormStep] = useState(1)
+  const [formStep, setFormStep] = useState(0)
   const [loggedIn, setLoggedIn] = useState(true)
   const [repos, setRepos] = useState(undefined)
   const [username, setUsername] = useState(undefined)
@@ -27,12 +26,14 @@ function CreateWeb() {
 
   const connectCheck = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/profile',{ withCredentials: true})
-      setRepos(res.data.repos)
-      setUsername(res.data.username)
+      const profile = await axios.get('http://localhost:8000/profile',{ withCredentials: true})
+      const repos = await axios.get('http://localhost:8000/profile/repos',{ withCredentials: true})
+      setRepos(repos.data)
+      setUsername(profile.data.username)
       setLoggedIn(true)
-      console.log('/profile data:', res.data)
-      console.log('res.data.repos:', res.data.repos)
+      nextHandler()
+      console.log('connectCheck profile:', profile.data)
+      console.log('connectCheck repos:', repos.data)
     } catch(err) {
       setLoggedIn(false)
       console.log('err.message', err.message)
@@ -48,6 +49,7 @@ function CreateWeb() {
     <div className='jumbo center'>
         <div className='container center '>
             {loggedIn ? '':<Redirect to='/'/>}
+            {formStep==0?'LOADING YOUR REPOSITORIES, PLEASE GIVE US A SECOND...': ''}
             {formStep==1?<Linkedin     nextHandler={nextHandler}/>: ''}
             {formStep==2?<AboutMe      nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
             {formStep==3?<PickProject  nextHandler={nextHandler} prevHandler={prevHandler} repos={repos}/>:''}
