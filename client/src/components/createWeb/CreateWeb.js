@@ -49,7 +49,7 @@ function CreateWeb() {
     <div className='jumbo center'>
         <div className='container center '>
             {loggedIn ? '':<Redirect to='/'/>}
-            {formStep==0?'LOADING YOUR REPOSITORIES, PLEASE GIVE US A SECOND...': ''}
+            {formStep==0?'LOADING YOUR REPOSITORIES, PLEASE GIVE US 10 SECONDS...': ''}
             {formStep==1?<Linkedin     nextHandler={nextHandler}/>: ''}
             {formStep==2?<AboutMe      nextHandler={nextHandler} prevHandler={prevHandler}/>:''}
             {formStep==3?<PickProject  nextHandler={nextHandler} prevHandler={prevHandler} repos={repos}/>:''}

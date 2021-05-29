@@ -38,9 +38,7 @@ const navbarLinks = (links,aboutMe) => {
     //for the first value in the navbar (your name)
     let navbarHtml = 
     '<li class="nav-item">' +
-        '<a href="/">' +
             aboutMe.name +
-        '</a>' +
     '</li>';
     for (let linkName in links) {
 
