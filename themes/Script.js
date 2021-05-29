@@ -1,4 +1,6 @@
-const retrieveData = async () => {
+console.log(window.location.pathname.slice(1))
+
+const retrieveData = async (username) => {
     const url = 'http://localhost:8000/profile'
     const response = await fetch(url, {
         method: 'POST',
@@ -6,7 +8,7 @@ const retrieveData = async () => {
             'Content-Type': 'application/json'
           },
         body: JSON.stringify({
-            username:'farsbein'
+            username:username
         })
     })
     const profile = await response.json()
@@ -114,7 +116,8 @@ const githubMoreBtn = (links) => {
 
 
 (async () => {
-    let data = await retrieveData()
+    username = window.location.pathname.slice(1).replace(/\s/g, '')
+    let data = await retrieveData(username)
     console.log('data:',data)
     navbarLinks(data.links,data.aboutMe)
     aboutMe(data.aboutMe)
