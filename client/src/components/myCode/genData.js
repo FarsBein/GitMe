@@ -5,7 +5,7 @@ export const genData = (profile) => {
         aboutMe: {
             name: profile.username,
             headline: profile.headline,
-            description: profile.description,
+            description: profile.aboutMe,
             email: "test@ryerson.ca"
         },
         links: {

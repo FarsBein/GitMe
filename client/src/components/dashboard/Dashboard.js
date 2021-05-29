@@ -13,7 +13,6 @@ function Dashboard() {
   }
 
   const isLoggedinCheck = async () => {
-    console.log('isLoggedinCheck called')
     try {
       const user = await axios.get('http://localhost:8000/user',{ withCredentials: true})
       setUsername(user.data.username)
