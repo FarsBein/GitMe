@@ -132,6 +132,19 @@ app.post('/profile', async (req, res) => {
     }
 })
 
+app.get('/user', async (req, res) => {
+    try {
+        if (req.user) {
+            console.log('/user req.user:', req.user.username)
+            return res.status(200).send(req.user)
+        } else {
+            return res.status(403).send({ message: 'you are not logged in' })
+        }
+    } catch (err) {
+        res.json({err: err.message})
+    }
+})
+
 app.use(express.static('./themes'));
 app.get('/:username', async (req, res) => {
     res.sendFile(__dirname + '/themes/default.html');

@@ -2,19 +2,33 @@ import './Dashboard.css';
 import '../SharedStyle.css';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function Dashboard() {
+  const [loggedIn, setLoggedIn] = useState(true)
+  const [username, setUsername] = useState(undefined)
 
   const logoutHandle = async (e) => {
     window.location = "http://localhost:8000/auth/dashboard"
   }
 
-  const checkIfLoggedin = async (e) => {
-    const isLoggedin = await axios.get('http://localhost:8000/auth/isLoggedin')
-    if (isLoggedin){
+  const isLoggedinCheck = async () => {
+    console.log('isLoggedinCheck called')
+    try {
+      const user = await axios.get('http://localhost:8000/user',{ withCredentials: true})
+      setUsername(user.data.username)
+      setLoggedIn(true)
+      console.log(user.data.username)
+    } catch(err) {
+      setLoggedIn(false)
+      console.log('err.message', err.message)
       window.location = "http://localhost:3000"
-    } 
+    }
   }
+
+  useEffect(() => {
+    isLoggedinCheck()
+  }, [])
 
   return (
     <div className='gray-bg'>
@@ -27,20 +41,20 @@ function Dashboard() {
                 </div>
             </div>
           </Link>
-          <Link to='/'>
+          <Link to='/my-code'>
             <div className="cards">
                 <div>
-                  <h4><b>Change projects background</b></h4> 
+                  <h4><b>My Code</b></h4> 
                 </div>
             </div> 
           </Link>
-          <Link>
+          <a href={'http://localhost:8000/'+username}>
             <div className="cards">
-                <div onClick={(e)=>checkIfLoggedin(e)}>
+                <div>
                   <h4><b>My Website</b></h4> 
                 </div>
             </div>
-          </Link>
+          </a>
           <Link>
             <div className="cards" onClick={(e)=>logoutHandle(e)}>
                 <div>
