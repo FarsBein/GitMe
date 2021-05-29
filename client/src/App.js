@@ -12,6 +12,7 @@ import GithubAuth from './components/auth/GithubAuth';
 import CreateWeb from './components/createWeb/CreateWeb';
 import ReactForm from './components/createWeb/ReactForm';
 import TheWebsite from './components/themes/TheWebsite'
+import MyCode from './components/myCode/MyCode';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <div>
             <Navbar/>
             <Switch>
+              <Route path='/my-code'        component={MyCode}/>
               <Route path='/react-form'     component={ReactForm}/>
               <Route path='/github-auth'    component={GithubAuth}/>
               <Route path='/create-website' component={CreateWeb}/>
