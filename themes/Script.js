@@ -18,10 +18,10 @@ const retrieveData = async (username) => {
     {
         projects: profile.repos,
         aboutMe: {
-            name: profile.username,
+            name: profile.name,
             headline: profile.headline,
             description: profile.aboutMe,
-            email: "test@ryerson.ca"
+            email: profile.email == null ? '' : profile.email
         },
         links: {
             GitHub: profile.github,

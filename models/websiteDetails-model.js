@@ -8,6 +8,12 @@ const websiteDetailsSchema = new Schema({
         unique: true,
         lowercase: true
     },
+    name: {
+        type: String,
+    },
+    email: {
+        type: String,
+    },
     aboutMe: {
         type: String,
     },

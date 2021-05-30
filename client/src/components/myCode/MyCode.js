@@ -10,7 +10,7 @@ function MyCode() {
   const connectCheck = async () => {
     try {
       const res = await axios.get('http://localhost:8000/profile',{ withCredentials: true})
-      setTextarea('const Data ='+JSON.stringify(genData(res.data), null, 3))
+      setTextarea('const data = '+JSON.stringify(genData(res.data), null, 3))
       console.log('data:','const Data ='+JSON.stringify(genData(res.data)))
     } catch(err) {
       console.log('err.message', err.message)

@@ -27,15 +27,6 @@ function AboutMe({nextHandler,prevHandler}) {
   return (
       <div>
         <ReactBootStrap.Form className='form-container'>
-        <h3 className='space-between'>About Me</h3> 
-          <br/>
-          <ReactBootStrap.InputGroup className="mb-2">
-          <ReactBootStrap.Form.Group>
-              <ReactBootStrap.Form.Control as="textarea" rows={3} cols={1000} onChange={(e) => onChangeAboutMeHandler(e)} className='wide-textarea' value={aboutMe} /> 
-          </ReactBootStrap.Form.Group>
-          </ReactBootStrap.InputGroup>
-        <br/>
-        <br/>
         <h3>Headline</h3> 
             <br/>
             <ReactBootStrap.InputGroup className="mb-2">
@@ -43,10 +34,22 @@ function AboutMe({nextHandler,prevHandler}) {
                 <ReactBootStrap.Form.Control as="textarea" rows={2} cols={1000} onChange={(e) => onChangeHeadlineHandler(e)} className='wide-textarea' value={headline} />
             </ReactBootStrap.Form.Group>
             </ReactBootStrap.InputGroup>
-            <ReactBootStrap.Button variant="dark" onClick={() => saveChanges()} disabled={aboutMe&&headline ? false : true}>
+
+        <br/>
+        <br/>
+        
+        <h3 className='space-between'>About Me</h3> 
+          <br/>
+          <ReactBootStrap.InputGroup className="mb-2">
+          <ReactBootStrap.Form.Group>
+              <ReactBootStrap.Form.Control as="textarea" rows={3} cols={1000} onChange={(e) => onChangeAboutMeHandler(e)} className='wide-textarea' value={aboutMe} /> 
+          </ReactBootStrap.Form.Group>
+          </ReactBootStrap.InputGroup>
+        </ReactBootStrap.Form>  
+        
+        <ReactBootStrap.Button variant="dark" onClick={() => saveChanges()} disabled={aboutMe&&headline ? false : true}>
                 Next
             </ReactBootStrap.Button>
-        </ReactBootStrap.Form>  
       </div>
   );
 }

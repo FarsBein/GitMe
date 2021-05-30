@@ -13,7 +13,8 @@ passport.use(
     new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:8000/auth/github/callback"
+    callbackURL: "http://localhost:8000/auth/github/callback",
+    scope: [ 'user:email' ], // fetches non-public emails as well (Doesn't work)
   },
   (accessToken, refreshToken, profile, callBack) => {
     // check if user is in the database
@@ -31,6 +32,8 @@ passport.use(
         
         const newWebsiteDetails = await new WebsiteDetails({
           username: profile.username,
+          name:  profile._json.name,
+          email:  profile._json.email,
           github: profile.profileUrl,
           location: profile._json.location,
           repos: repos,
@@ -39,21 +42,13 @@ passport.use(
           headline:''
         }).save()
         
-        console.log('newUser:', newUser)
-        console.log('newWebsiteDetails:', newWebsiteDetails)
+        console.log('profile._json.name:', profile._json.name)
+        console.log('profile._json.email:', profile._json.email)
+        // console.log('newWebsiteDetails:', newWebsiteDetails)
         return callBack(null, newUser); // return to serialize
       } else {
-        // const updatedUser = await User.findOneAndUpdate(currentUser.username,
-        //   {   
-        //     repos: repos,
-        //   },{
-        //       new: true // return the updated post
-        //   })
-        // return callBack(null, updatedUser); // return to serialize
         return callBack(null, currentUser)
       }
     })
-    // return profile data
-    // return callBack(null, profile);
   }
 ));
