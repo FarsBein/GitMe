@@ -1,11 +1,27 @@
 import './Navbar.css';
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import * as ReactBootStrap from "react-bootstrap"
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 // import lightmoon from '../../images/lightmoon.svg';
 
 function Navbar() {
     const [expanded, setExpanded] =  useState(false);
+    const [loggedIn, setLoggedIn] =  useState(false);
+
+    const isLoggedinCheck = async () => {
+        try {
+          const user = await axios.get('http://localhost:8000/user',{ withCredentials: true})
+          setLoggedIn(true)
+        } catch(err) {
+          setLoggedIn(false)
+          console.log('err.message', err.message)
+        }
+      }
+    
+    useEffect(() => {
+        isLoggedinCheck()
+    }, [])
 
     const toggleExpand = () => {
         setExpanded(!expanded)
@@ -24,11 +40,14 @@ function Navbar() {
                     <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" className="space-between">
                         <ReactBootStrap.Nav className="mr-auto">
                             <NavLink to="/"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Home        </NavLink>
-                            {/* <NavLink to="/showcase" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Showcase</NavLink> */}
-                            <NavLink to="/doc"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Doc      </NavLink>
                             <NavLink to="/aboutUs"  onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>About us    </NavLink>
+                            
+                            {/* temporary removed until the creation of these pages are done */}
+                            {/* <NavLink to="/doc"         onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Doc      </NavLink> */}
+                            {/* <NavLink to="/showcase" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13 }}>Showcase</NavLink> */}
 
-                            <NavLink to="/dashboard" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13}}>Dashboard  </NavLink>
+                            {/* can only see it if you are loggedin */}
+                            {loggedIn ? <NavLink to="/dashboard" onClick={() => toggleExpand()} className='link' style={{ paddingLeft: 13}}>Dashboard</NavLink>: ''}
 
                         </ReactBootStrap.Nav>
 
