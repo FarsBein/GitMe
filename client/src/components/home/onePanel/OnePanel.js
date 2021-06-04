@@ -10,7 +10,7 @@ function OnePanel() {
 
   const getStartedHandle = (e) => {
     e.preventDefault()
-    window.location = "http://localhost:8000/auth/login"
+    window.location = "https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/auth/login"
     // axios.get('/auth/github').then((res) => {
     //     console.log('res:',res)
     // })
@@ -43,7 +43,7 @@ function OnePanel() {
                 <br/>
                 <p>
                     <Link to='/github-auth'>
-                        <ReactBootStrap.Button variant="warning" size='lg' onClick={(e)=>getStartedHandle(e)} className="button">
+                        <ReactBootStrap.Button variant="warning" size='lg' onClick={(e)=>getStartedHandle(e)} className="button-one-panel">
                             Get Started
                         </ReactBootStrap.Button>
                     </Link> 

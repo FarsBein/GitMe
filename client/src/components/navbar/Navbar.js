@@ -11,7 +11,7 @@ function Navbar() {
 
     const isLoggedinCheck = async () => {
         try {
-          const user = await axios.get('http://localhost:8000/user',{ withCredentials: true})
+          const user = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/user',{ withCredentials: true})
           setLoggedIn(true)
         } catch(err) {
           setLoggedIn(false)

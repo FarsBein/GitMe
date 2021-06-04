@@ -1,7 +1,7 @@
 console.log(window.location.pathname.slice(1))
 
 const retrieveData = async (username) => {
-    const url = 'http://localhost:8000/profile'
+    const url = 'https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/profile'
     const response = await fetch(url, {
         method: 'POST',
         headers: {

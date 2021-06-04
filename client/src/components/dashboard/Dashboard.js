@@ -9,19 +9,19 @@ function Dashboard() {
   const [username, setUsername] = useState(undefined)
 
   const logoutHandle = async (e) => {
-    window.location = "http://localhost:8000/auth/dashboard"
+    window.location = "https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/auth/dashboard"
   }
 
   const isLoggedinCheck = async () => {
     try {
-      const user = await axios.get('http://localhost:8000/user',{ withCredentials: true})
+      const user = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/user',{ withCredentials: true})
       setUsername(user.data.username)
       setLoggedIn(true)
       console.log(user.data.username)
     } catch(err) {
       setLoggedIn(false)
       console.log('err.message', err.message)
-      window.location = "http://localhost:3000"
+      window.location = "https://admiring-bose-672fd3.netlify.app"
     }
   }
 
@@ -47,7 +47,7 @@ function Dashboard() {
                 </div>
             </div> 
           </Link>
-          <a href={'http://localhost:8000/'+username}>
+          <a href={'https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/'+username}>
             <div className="cards">
                 <div>
                   <h4><b>My Website</b></h4> 

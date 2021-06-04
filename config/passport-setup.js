@@ -13,7 +13,7 @@ passport.use(
     new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:8000/auth/github/callback",
+    callbackURL: "https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/auth/github/callback",
     scope: [ 'user:email' ], // fetches non-public emails as well (Doesn't work)
   },
   (accessToken, refreshToken, profile, callBack) => {

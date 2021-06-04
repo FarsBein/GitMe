@@ -3,7 +3,8 @@
 /node_modules
 .env
 
-# from client
+# from serverless
+.serverless
 
 # dependencies
 client/node_modules

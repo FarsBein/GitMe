@@ -4,6 +4,12 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config() 
 
+// http logger 
+const morgan = require('morgan')
+
+// serverless
+const serverless = require("serverless-http");
+
 // functions
 const {getRepos} = require('./config/repo-request')
 
@@ -35,7 +41,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 //allow external requests CORS
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
+app.use(cors({credentials: true, origin: 'https://admiring-bose-672fd3.netlify.app'}))
 
 //parse json data
 app.use(express.json());
@@ -80,6 +86,9 @@ passport.deserializeUser(function (id, callBack) {
 })
 
 // routes 
+
+app.use(morgan('tiny')) // logger
+
 app.get('/', (req,res)=> {
     res.send('WE ARE WORKING FROM HOME')
 })
@@ -152,3 +161,7 @@ app.get('/:username', async (req, res) => {
 
 // listener 
 app.listen(PORT, console.log(`Server is starting at port ${PORT}`));
+
+
+// for serverless
+module.exports.handler = serverless(app);

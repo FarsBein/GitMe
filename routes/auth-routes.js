@@ -31,7 +31,7 @@ router.get('/github', passport.authenticate('github'));
 router.get('/github/callback', passport.authenticate('github', { failureRedirect: '/auth/login' }), //was "/auth/error"
     (req, res) => {
         console.log('successfully logged in')
-        res.redirect('http://localhost:3000/dashboard'); //was "/auth/pass"
+        res.redirect('https://admiring-bose-672fd3.netlify.app/dashboard'); //was "/auth/pass"
 });
 
 // 3 handle error in connection
@@ -58,7 +58,7 @@ router.get('/login', (req,res)=> {
 router.get('/logout', isLoggedin, (req, res) => {
     req.logOut();
     console.log('successfully logged out')
-    res.redirect('http://localhost:3000');
+    res.redirect('https://admiring-bose-672fd3.netlify.app');
 });
 //for testing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

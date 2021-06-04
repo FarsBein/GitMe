@@ -26,8 +26,8 @@ function CreateWeb() {
 
   const connectCheck = async () => {
     try {
-      const profile = await axios.get('http://localhost:8000/profile',{ withCredentials: true})
-      const repos = await axios.get('http://localhost:8000/profile/repos',{ withCredentials: true})
+      const profile = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/profile',{ withCredentials: true})
+      const repos = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/profile/repos',{ withCredentials: true})
       setRepos(repos.data)
       setUsername(profile.data.username)
       setLoggedIn(true)
@@ -37,7 +37,7 @@ function CreateWeb() {
     } catch(err) {
       setLoggedIn(false)
       console.log('err.message', err.message)
-      window.location = "http://localhost:3000"
+      window.location = "https://admiring-bose-672fd3.netlify.app"
     }
   }
 

@@ -1,3 +1,8 @@
 To change the theme from black-yellow to darkBlue-brightBlue (#1c2237) or green (success and #1DB954):
     1. change the button in Home and steps from waning to primary
     2. change the styling in Home.css to : box-shadow: 1px 1px 20px 1px #1c2237; 
+
+I changed all development URLs:
+    1. http://localhost:8000 -> https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/
+    2. http://localhost:3000 -> https://admiring-bose-672fd3.netlify.app/
+
