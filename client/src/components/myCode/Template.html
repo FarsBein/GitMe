@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="Styling.css">
+
+    <!-- change href in the following tag to change logo -->
+    <link href="https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-23-512.png" rel="icon">
+    
+    <!-- Title -->
+    <title>Hi There</title>
+</head>
+  
+<body class="container" >
+    <nav class="nav-container">
+        <div class="mobile">
+            <!-- The overlay -->
+            <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a  class="close-btn" onclick="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content" id='overlay-navbar'>
+                <!-- The format of values here is as follows -->
+                <!-- 
+                <a href=URL>GitHub</a>
+                <a href=URL>Linkedin</a>
+                <a href=URL>Resume</a>
+                <a href=URL>Email</a> 
+                -->
+            </div>
+
+            </div>
+
+            <!-- Use any element to open/show the overlay navigation menu -->
+            <span onclick="openNav()" class='open-icon'>&#9776;</span> 
+        </div>
+
+        <ul class="nav-list desktop" id='navbar'>
+            <!-- The format of values here is as follows -->
+            <!-- 
+            <li class="nav-item ">
+                <a href="/">NAME</a>
+            </li>
+            <li class="nav-item desktop">
+                <a href=URL target='_blank'>Github</a>
+            </li>
+            <li class="nav-item desktop">
+                <a href=URL target='_blank'>Linkedin</a>
+            </li>
+            <li class="nav-item desktop">
+                <a href=URL target='_blank'>
+                    Resume
+                </a>
+            </li> -->
+        </ul>
+
+    </nav>
+    
+    <div class="panel-sm">
+        <div id="aboutMe">
+            <!-- The format of values here is as follows  -->
+            <!-- 
+            <h1>
+                HEADLINE
+            </h1>
+            <p>
+                BODY PARAGRAPH
+            </p>
+            <p>
+               <a href=URL>EMAIL</a> 
+            </p> 
+            -->
+        </div>
+    </div>
+
+    <div class='panel'>
+        <h3>Most Recent Projects. </h3>
+
+        <div class='grid' id='projects'>
+        </div>
+
+        <br/>
+        <br/>
+        
+        <div class="center" id="More-on-Github-btn">
+            <!-- The format of values here is as follows -->
+            <!-- 
+            <form style="display: inline" action=URL target='_blank' method="get">
+                <button class="button">More on Github</button>
+            </form> 
+            -->
+        </div>
+    </div>
+
+
+    <!-- (Start) If you want to add a footer edit this  >>>>>>>>>-->
+    <footer>
+        <ul class="nav-list ">
+            <li class="nav-item ">
+            </li>
+        </ul>
+    </footer>
+    <!-- (End) If you want to add a footer edit this  >>>>>>>>>-->
+
+    <script>
+        function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+    <script src="./Data.js"></script>
+    <script src="./Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.jumbo-about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.infomessage-image {
+    max-width: 50px;
+}
+
+.sleepbag-image {
+    max-width: 400px;
+    padding: 10px;
+}

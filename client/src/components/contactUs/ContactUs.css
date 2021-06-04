@@ -1,0 +1,12 @@
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-container p {
+    max-width: 1000px;
+    text-align: center;
+}
+

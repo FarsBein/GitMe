@@ -1,0 +1,12 @@
+.myCode-container {
+    min-height: calc(100vh - 80px - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 20px 0;
+}
+
+.instructions-container {
+
+}
