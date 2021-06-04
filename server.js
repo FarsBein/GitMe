@@ -22,7 +22,6 @@ cloudinary.config({
     api_secret: process.env.API_SECRET
 })
 
-
 // db models import
 const User = require('./models/user-model')
 const WebsiteDetails = require('./models/websiteDetails-model')
