@@ -7,9 +7,6 @@ require('dotenv').config()
 // http logger 
 const morgan = require('morgan')
 
-// serverless
-const serverless = require("serverless-http");
-
 // functions
 const {getRepos} = require('./config/repo-request')
 
@@ -160,7 +157,3 @@ app.get('/:username', async (req, res) => {
 
 // listener 
 app.listen(PORT, console.log(`Server is starting at port ${PORT}`));
-
-
-// for serverless
-module.exports.handler = serverless(app);
