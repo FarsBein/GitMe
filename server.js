@@ -37,7 +37,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 //allow external requests CORS
-app.use(cors({credentials: true, origin: 'https://admiring-bose-672fd3.netlify.app/'}))
+app.use(cors({credentials: true, origin: 'https://admiring-bose-672fd3.netlify.app'}))
 
 //parse json data
 app.use(express.json());
