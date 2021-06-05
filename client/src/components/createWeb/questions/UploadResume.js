@@ -4,7 +4,10 @@ import { useState } from 'react';
 import upload from '../../../images/upload.svg'
 import checkmark from '../../../images/checkmark.svg'
 import axios from 'axios';
-import {CLOUD_NAME} from '../../../secret'
+
+// secret file is doesn't appear in heroku leading to errors 
+// import {CLOUD_NAME} from '../../../secret'
+
 
 function UploadResume({nextHandler,prevHandler, username}) {
     const [uploadComplete, setUploadComplete] =  useState(false)
