@@ -86,8 +86,9 @@ passport.deserializeUser(function (id, callBack) {
 app.use(morgan('tiny')) // logger
 
 app.get('/', (req,res)=> {
-    res.send('WE ARE WORKING FROM HOME!)
+    res.send('WE ARE WORKING FROM HOME')
 })
+
 // app.use('/',express.static(path.join(__dirname,'/client/build')))
 
 app.use('/auth', authRoutes)
