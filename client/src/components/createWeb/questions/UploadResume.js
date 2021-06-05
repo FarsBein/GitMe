@@ -31,7 +31,7 @@ function UploadResume({nextHandler,prevHandler, username}) {
         let formData = new FormData();
         formData.append('file',resume)
         formData.append('upload_preset','git-me')
-        const cloudName = process.env.CLOUD_NAME || CLOUD_NAME
+        const cloudName = process.env.CLOUD_NAME // CLOUD_NAME
 
         const uploadedFile = await axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/upload`, formData)
         console.log('uploaded file:',uploadedFile.data.url)
