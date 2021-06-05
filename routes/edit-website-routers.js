@@ -9,7 +9,7 @@ const isLoggedin = function (req,res,next) {
     if (req.user) {
         next()
     } else {
-        res.redirect('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/auth/login');
+        res.redirect('https://git-me-to.herokuapp.com/auth/login');
     }
 }  
 

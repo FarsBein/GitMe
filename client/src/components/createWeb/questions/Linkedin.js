@@ -23,7 +23,7 @@ function Linkedin({nextHandler}) {
     }
 
     const saveChanges = async () => {
-      const updatedProfile = await axios.post('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/edit/linkedin', {
+      const updatedProfile = await axios.post('https://git-me-to.herokuapp.com/edit/linkedin', {
         linkedin: currentUsername
       },{ withCredentials: true})
       console.log('updatedProfile:',updatedProfile.data)

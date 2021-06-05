@@ -26,8 +26,8 @@ function CreateWeb() {
 
   const connectCheck = async () => {
     try {
-      const profile = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/profile',{ withCredentials: true})
-      const repos = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/profile/repos',{ withCredentials: true})
+      const profile = await axios.get('https://git-me-to.herokuapp.com/profile',{ withCredentials: true})
+      const repos = await axios.get('https://git-me-to.herokuapp.com/profile/repos',{ withCredentials: true})
       setRepos(repos.data)
       setUsername(profile.data.username)
       setLoggedIn(true)

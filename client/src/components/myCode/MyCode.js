@@ -9,7 +9,7 @@ function MyCode() {
 
   const connectCheck = async () => {
     try {
-      const res = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/profile',{ withCredentials: true})
+      const res = await axios.get('https://git-me-to.herokuapp.com/profile',{ withCredentials: true})
       setTextarea('const data = '+JSON.stringify(genData(res.data), null, 3))
       console.log('data:','const Data ='+JSON.stringify(genData(res.data)))
     } catch(err) {

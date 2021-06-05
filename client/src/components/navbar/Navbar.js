@@ -11,7 +11,7 @@ function Navbar() {
 
     const isLoggedinCheck = async () => {
         try {
-          const user = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/user',{ withCredentials: true})
+          const user = await axios.get('https://git-me-to.herokuapp.com/user',{ withCredentials: true})
           setLoggedIn(true)
         } catch(err) {
           setLoggedIn(false)

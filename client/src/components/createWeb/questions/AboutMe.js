@@ -18,7 +18,7 @@ function AboutMe({nextHandler,prevHandler}) {
   }
 
   const saveChanges = async () => {
-    await axios.post('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/edit/about-me', {
+    await axios.post('https://git-me-to.herokuapp.com/edit/about-me', {
       aboutMe,headline
     },{ withCredentials: true})
     nextHandler()

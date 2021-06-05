@@ -15,7 +15,7 @@ function PickProject({nextHandler,prevHandler, repos}) {
   }
 
   const saveChanges = async () => {
-    const updatedProfile = await axios.post('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/edit/repos', {
+    const updatedProfile = await axios.post('https://git-me-to.herokuapp.com/edit/repos', {
       reposUrl: useAll ? 'all' : projects
     },{ withCredentials: true})
     console.log('pick project:',updatedProfile.data)

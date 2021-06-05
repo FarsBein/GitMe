@@ -9,12 +9,12 @@ function Dashboard() {
   const [username, setUsername] = useState(undefined)
 
   const logoutHandle = async (e) => {
-    window.location = "https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/auth/dashboard"
+    window.location = "https://git-me-to.herokuapp.com/auth/dashboard"
   }
 
   const isLoggedinCheck = async () => {
     try {
-      const user = await axios.get('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/user',{ withCredentials: true})
+      const user = await axios.get('https://git-me-to.herokuapp.com/user',{ withCredentials: true})
       setUsername(user.data.username)
       setLoggedIn(true)
       console.log(user.data.username)
@@ -47,7 +47,7 @@ function Dashboard() {
                 </div>
             </div> 
           </Link>
-          <a href={'https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/'+username}>
+          <a href={'https://git-me-to.herokuapp.com/'+username}>
             <div className="cards">
                 <div>
                   <h4><b>My Website</b></h4> 

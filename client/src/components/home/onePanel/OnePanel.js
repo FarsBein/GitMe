@@ -10,7 +10,7 @@ function OnePanel() {
 
   const getStartedHandle = (e) => {
     e.preventDefault()
-    window.location = "https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/auth/login"
+    window.location = "https://git-me-to.herokuapp.com/auth/login"
     // axios.get('/auth/github').then((res) => {
     //     console.log('res:',res)
     // })

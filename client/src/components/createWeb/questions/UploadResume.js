@@ -40,7 +40,7 @@ function UploadResume({nextHandler,prevHandler, username}) {
         let formData = new FormData();
         formData.append('file',resume)
         console.log('formData:',formData.values())
-        const updatedWebsite = await axios.post('https://jl9fu2pz4g.execute-api.us-east-2.amazonaws.com/dev/edit/upload-resume', {
+        const updatedWebsite = await axios.post('https://git-me-to.herokuapp.com/edit/upload-resume', {
             file: await uploadToCloudinary(),
             username
         })
