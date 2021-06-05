@@ -89,13 +89,13 @@ app.get('/', (req,res)=> {
     res.send('WE ARE WORKING FROM HOME')
 })
 
-if (process.env.NODE_ENV = "production"){
-    app.use('/',express.static(path.join(__dirname,'/client/build')))
-    const path = require("path")
-    app.get("*", (req,res) => {
-        res.sendFile(path.resolve(dirname, 'client','build','index.html'))
-    })
-}
+// if (process.env.NODE_ENV = "production"){
+//     app.use('/',express.static(path.join(__dirname,'/client/build')))
+//     const path = require("path")
+//     app.get("*", (req,res) => {
+//         res.sendFile(path.resolve(dirname, 'client','build','index.html'))
+//     })
+// }
 
 // app.use('/',express.static(path.join(__dirname,'/client/build')))
 
