@@ -163,7 +163,7 @@ app.get('/user', async (req, res) => {
             return res.status(403).send({ message: 'you are not logged in' })
         }
     } catch (err) {
-        res.json({err: err.message})
+        res.json({err: err.message,info: req.user})
     }
 })
 
