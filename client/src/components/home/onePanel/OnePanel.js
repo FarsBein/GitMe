@@ -5,6 +5,8 @@ import profiletab from '../../../images/profiletab.svg';
 import checkmark from '../../../images/checkmark.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {useEffect} from 'react';
+
 
 function OnePanel() {
 
