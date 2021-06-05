@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -22,9 +22,5 @@
     "node-html-parser": "^3.3.0",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0"
-  },
-  "engine" : {
-      "node": "12.8.1",
-      "npm": "6.10.2"
-    }
+  }
 }
