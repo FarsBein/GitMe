@@ -16,6 +16,21 @@ function OnePanel() {
     // })
   }
 
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> for testing
+  const isLoggedinCheck = async () => {
+    try {
+      const user = await axios.get('https://git-me-to.herokuapp.com/user',{ withCredentials: true})
+      console.log(user.data)
+    } catch(err) {
+      console.log('err.message', err.message)
+    }
+  }
+
+  useEffect(() => {
+    isLoggedinCheck()
+  }, [])
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> for testing
+
   return (
       <div className='jumbo one-panel-jumbo'>
         <ReactBootStrap.Container className='one-panel-container'>
