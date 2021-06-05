@@ -1,6 +1,6 @@
 {
   "name": "git-personal",
-  "version": "12.8.1",
+  "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -22,5 +22,9 @@
     "node-html-parser": "^3.3.0",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0"
-  }
+  },
+  "engine" : {
+      "node": "12.8.1",
+      "npm": "6.10.2"
+    }
 }
