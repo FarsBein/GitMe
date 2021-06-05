@@ -61,7 +61,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        httpOnly:true,                  // means to not save session on browser only on server
+        httpOnly:false,                  // means to not save session on browser only on server
         secure: false,                  // only bc I am testing it on my local env change to true later
         maxAge: 2 * 24 * 60 * 60 * 1000 // two days (first number is days)
     }
