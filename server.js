@@ -86,10 +86,10 @@ passport.deserializeUser(function (id, callBack) {
 app.use(morgan('tiny')) // logger
 
 
-app.use('/',express.static(path.join(__dirname,'/client/build')))
-// app.get('/', (req,res)=> {
-//     res.send('WE ARE WORKING FROM HOME')
-// })
+// app.use('/',express.static(path.join(__dirname,'/client/build')))
+app.get('/', (req,res)=> {
+    res.sendFile(path.join(__dirname,'/client/build'));
+})
 
 // if (process.env.NODE_ENV = "production"){
 //     app.use('/',express.static(path.join(__dirname,'/client/build')))
