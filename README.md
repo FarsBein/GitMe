@@ -1,4 +1,4 @@
-# <img src="https://user-images.githubusercontent.com/53714581/120933236-2bc42b00-c6c7-11eb-97f2-9f177ec3da1c.png" alt="To The Moon!" height="32px"> GITME
+# <img src="https://user-images.githubusercontent.com/53714581/120933236-2bc42b00-c6c7-11eb-97f2-9f177ec3da1c.png" alt="To The Moon!" height="32px"> GITME — Personal Website Builder
 Allows users to create personal websites using their GitHub effortlessly.
 
 
