@@ -35,7 +35,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 //allow external requests CORS
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
+app.use(cors({credentials: true, origin: 'http://localhost:3000'})) // http://localhost:3000
 
 //parse json data
 app.use(express.json());
@@ -59,9 +59,10 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        httpOnly:true,                  // means to not save session on browser only on server
-        secure: false,                  // only bc I am testing it on my local env change to true later
-        maxAge: 2 * 24 * 60 * 60 * 1000 // two days (first number is days)
+        httpOnly:false,                             // means to not save session on browser only on server
+        secure: false,                              // only bc I am testing it on my local env change to true later
+        maxAge: parseInt(process.env.SESS_LIFETIME), // maxAge: 2 * 24 * 60 * 60 * 1000 // two days (first number is days)
+        sameSite: false
     }
 }))
 
@@ -133,6 +134,7 @@ app.post('/profile', async (req, res) => {
 })
 
 app.get('/user', async (req, res) => {
+    console.log('req.user',req.user)
     try {
         if (req.user) {
             console.log('/user req.user:', req.user.username)
